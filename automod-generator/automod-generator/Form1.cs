@@ -76,6 +76,7 @@ namespace automod_generator
                 string addData = "";
                 string addModifiers = "";
                 string standardData = "";
+                string userisData = "";
                 foreach (string item in checkList.CheckedItems)
                 {
                     if (addData == "")
@@ -87,6 +88,7 @@ namespace automod_generator
                         addData = addData + "+" + item;
                     }
                 }
+                
                 if (checkRegex.Checked || checkCase.Checked) 
                 {   
                     addModifiers = "(";
@@ -108,17 +110,35 @@ namespace automod_generator
                     addModifiers = addModifiers + ")";
                 }
                 addData = addData + addModifiers;
-                addData = addData + ":";
+                
+                if (checkList.CheckedItems.Count > 0)
+                {
+                    addData = addData + ":";
+                }
                 addData = addData +" " + boxFind.Text;
                 data.Add(addData);
-                foreach(string standard in standardList.CheckedItems)
+                foreach (string standard in standardList.CheckedItems)
                 {
                     if(standardData == "")
                     {
                         standardData = standard;
                     }
                 }
-                data.Add("standard:" + standardData);
+                if(standardList.CheckedItems.Count > 0)
+                {
+                    data.Add("standard: " + standardData);
+                }
+                foreach(string useris in userisList.CheckedItems)
+                {
+                    if(userisData == "")
+                    {
+                        data.Add("author:");
+                    }
+                    userisData = useris;
+                    data.Add("    " + useris+ ": false");
+                }
+                addData = addData + userisData;
+                
             }
             void addNegCondition()
             {

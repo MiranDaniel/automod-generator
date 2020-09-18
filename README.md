@@ -13,6 +13,14 @@ url
 flair_text
 ```
 
+**User Checks**
+```
+is_gold
+is_submitter
+is_contributor
+is_moderator
+```
+
 **Modifiers**
 ```
 (regex)
