@@ -60,6 +60,13 @@ action_reason
 report_reason
 ```
 
+```
+set_sticky
+set_nsfw
+set_spoiler
+set_locked
+```
+
 ## Other
 
 ```
