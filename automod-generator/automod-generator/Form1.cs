@@ -64,13 +64,12 @@ namespace automod_generator
         public class vars
         {
             public static string type = "";
+            public static List<string> conditionData = new List<string>();
+            public static List<string> actionData = new List<string>();
         }
 
         public void compile()
         {
-            output.Text = "test";
-            List<string> data = new List<string>();
-            output.Text = vars.type;
             void addPosCondition()
             {
                 string addData = "";
@@ -116,7 +115,7 @@ namespace automod_generator
                     addData = addData + ":";
                 }
                 addData = addData +" " + boxFind.Text;
-                data.Add(addData);
+                vars.conditionData.Add(addData);
                 foreach (string standard in standardList.CheckedItems)
                 {
                     if(standardData == "")
@@ -126,19 +125,17 @@ namespace automod_generator
                 }
                 if(standardList.CheckedItems.Count > 0)
                 {
-                    data.Add("standard: " + standardData);
+                    vars.conditionData.Add("standard: " + standardData);
                 }
                 foreach(string useris in userisList.CheckedItems)
                 {
                     if(userisData == "")
                     {
-                        data.Add("author:");
+                        vars.conditionData.Add("author:");
                     }
                     userisData = useris;
-                    data.Add("    " + useris+ ": false");
-                }
-                addData = addData + userisData;
-                
+                    vars.conditionData.Add("    " + useris+ ": false");
+                }               
             }
             void addNegCondition()
             {
@@ -146,7 +143,23 @@ namespace automod_generator
             }
             void addAction()
             {
-
+                string actionData = "";
+                foreach(string action in actionList.CheckedItems)
+                {
+                    actionData = "action: " + action;
+                    vars.actionData.Add(actionData);
+                    if (checkReason.Checked)
+                    {
+                        if(action != "report")
+                        {
+                            vars.actionData.Add("action_reason: " + boxReason.Text);
+                        }
+                        else
+                        {
+                            vars.actionData.Add("report_reason: " + boxReason.Text);
+                        }
+                    }
+                }
             }
 
             if (vars.type == "addPosCondition")
@@ -161,8 +174,10 @@ namespace automod_generator
             {
                 addAction();
             }
-            string o = string.Join("\n", data);
+            string o = string.Join("\n", vars.conditionData);
             output.Text = o;
+            string a = string.Join("\n", vars.actionData);
+            output.Text = output.Text +"\n"+ a;
 
         }
 
@@ -180,7 +195,14 @@ namespace automod_generator
 
         private void actionButton_Click(object sender, EventArgs e)
         {
+            vars.type = "addAction";
+            compile();
+        }
 
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            vars.conditionData.Clear();
+            vars.actionData.Clear();
         }
     }
 }

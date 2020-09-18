@@ -3,7 +3,7 @@
 
 # Supported functions:
 
-
+## Checks
 **Search Checks**
 ```
 title
@@ -37,4 +37,19 @@ crowdfunding sites
 meme generator sites
 facebook links
 amazon affiliate links
+```
+
+## Actions
+**Action**
+```
+remove
+approve
+spam
+filter
+report
+```
+
+```
+action_reason
+report_reason
 ```

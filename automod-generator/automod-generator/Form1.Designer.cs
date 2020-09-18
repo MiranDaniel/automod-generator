@@ -60,6 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.debugBox = new System.Windows.Forms.RichTextBox();
+            this.resetButton = new System.Windows.Forms.Button();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -406,11 +407,22 @@
             this.debugBox.TabIndex = 11;
             this.debugBox.Text = "";
             // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(12, 693);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(284, 23);
+            this.resetButton.TabIndex = 12;
+            this.resetButton.Text = "Reset Memory";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1439, 759);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.debugBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
@@ -474,6 +486,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button actionButton;
         private System.Windows.Forms.RichTextBox debugBox;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 
