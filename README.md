@@ -4,6 +4,12 @@
 # Supported functions:
 
 ## Checks
+**Types**
+```
+any
+submission
+comment
+```
 **Search Checks**
 ```
 title
@@ -52,4 +58,10 @@ report
 ```
 action_reason
 report_reason
+```
+
+## Other
+
+```
+moderators_exempt
 ```
