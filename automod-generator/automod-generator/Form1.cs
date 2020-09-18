@@ -62,92 +62,48 @@ namespace automod_generator
             checkList.CheckOnClick = true;
         }
 
-        public void compile()
+        public void compile(string type)
         {
-            string d = "";
-            if (listType.SelectedItem == "submission")
+            void addPosCondition()
             {
-                
-                foreach(string ad in checkList.CheckedItems)
-                {
-                    if (checkList.CheckedItems.Count > 1)
-                    {
-                        if(d != "")
-                        {
-                            d = d + "+" + ad;
-                        }
-                        else
-                        {
-                            d = d + ad;
-                        }
-                    }
-                    else
-                    {
-                        d = ad;
-                    }
-                    
-                    
-                }
-                
-                if (checkRegex.Checked == true)
-                {
-                    if(checkCase.Checked == true)
-                    {
-                        d = d + "(regex, case-sensitive)";
-                    }
-                    else
-                    {
-                        d = d + "(regex)";
-                    }
-                }
-                else
-                {
-                    if (checkCase.Checked == true)
-                    {
-                        d = d + "(case-sensitive)";
-                    }
-                }
 
-                d = d + ":";
-                d = d + " " + boxFind.Text;
-                d = d + "\n";
-                if (addList.SelectedItem == "moderators_exempt")
-                {
-                    d = d + "moderators_exempt: true";
-                }
-                d = d + "\n";
-                foreach (string ad in actionList.CheckedItems)
-                {
-                    d = d + "action: " + ad +"\n";
-                    if (checkReason.Checked == true)
-                    {
-                        d = d + "action_reason: " + boxReason.Text + "\n";
-                    }
-                }
-                foreach (string ad in moreactionList.CheckedItems)
-                {
-                    d = d + ad +": true" + "\n";
-                }
+            }
+            void addNegCondition()
+            {
 
+            }
+            void addAction()
+            {
 
+            }
 
-                output.Text = d;
+            if(type == "addPosCondition")
+            {
+                addPosCondition();
+            }
+            if (type == "addNegCondition")
+            {
+                addNegCondition();
+            }
+            if (type == "addAction")
+            {
+                addAction();
             }
         }
 
-
-
-
-
-        private void listType_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void ifButton_Click(object sender, EventArgs e)
         {
-            for (int ix = 0; ix < listType.Items.Count; ++ix)
-                if (ix != e.Index) listType.SetItemChecked(ix, false);
+            compile("addPosCondition");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ifNotButton_Click(object sender, EventArgs e)
         {
-            compile();
+            compile("addNegCondition");
+        }
+
+        private void actionButton_Click(object sender, EventArgs e)
+        {
+            compile("addAction");
         }
     }
 }

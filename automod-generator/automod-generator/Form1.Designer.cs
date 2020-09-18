@@ -33,6 +33,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkList = new System.Windows.Forms.CheckedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkCase = new System.Windows.Forms.CheckBox();
             this.boxFind = new System.Windows.Forms.RichTextBox();
             this.checkRegex = new System.Windows.Forms.CheckBox();
             this.output = new System.Windows.Forms.RichTextBox();
@@ -49,15 +50,15 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.standardList = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.userisList = new System.Windows.Forms.CheckedListBox();
-            this.checkCase = new System.Windows.Forms.CheckBox();
+            this.ifNotButton = new System.Windows.Forms.Button();
+            this.ifButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.actionButton = new System.Windows.Forms.Button();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,7 +90,6 @@
             this.listType.Name = "listType";
             this.listType.Size = new System.Drawing.Size(120, 64);
             this.listType.TabIndex = 1;
-            this.listType.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listType_ItemCheck);
             // 
             // groupBox2
             // 
@@ -123,6 +123,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // checkCase
+            // 
+            this.checkCase.AutoSize = true;
+            this.checkCase.Location = new System.Drawing.Point(69, 19);
+            this.checkCase.Name = "checkCase";
+            this.checkCase.Size = new System.Drawing.Size(96, 17);
+            this.checkCase.TabIndex = 3;
+            this.checkCase.Text = "Case Sensitive";
+            this.checkCase.UseVisualStyleBackColor = true;
             // 
             // boxFind
             // 
@@ -161,7 +171,6 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
@@ -278,8 +287,8 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox8);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.ifNotButton);
+            this.panel1.Controls.Add(this.ifButton);
             this.panel1.Controls.Add(this.groupBox7);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -287,24 +296,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(529, 375);
             this.panel1.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 323);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "IF";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 343);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "IF NOT";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -327,19 +318,30 @@
             this.userisList.Size = new System.Drawing.Size(195, 124);
             this.userisList.TabIndex = 2;
             // 
-            // checkCase
+            // ifNotButton
             // 
-            this.checkCase.AutoSize = true;
-            this.checkCase.Location = new System.Drawing.Point(69, 19);
-            this.checkCase.Name = "checkCase";
-            this.checkCase.Size = new System.Drawing.Size(96, 17);
-            this.checkCase.TabIndex = 3;
-            this.checkCase.Text = "Case Sensitive";
-            this.checkCase.UseVisualStyleBackColor = true;
+            this.ifNotButton.Location = new System.Drawing.Point(3, 343);
+            this.ifNotButton.Name = "ifNotButton";
+            this.ifNotButton.Size = new System.Drawing.Size(75, 23);
+            this.ifNotButton.TabIndex = 5;
+            this.ifNotButton.Text = "IF NOT";
+            this.ifNotButton.UseVisualStyleBackColor = true;
+            this.ifNotButton.Click += new System.EventHandler(this.ifNotButton_Click);
+            // 
+            // ifButton
+            // 
+            this.ifButton.Location = new System.Drawing.Point(3, 323);
+            this.ifButton.Name = "ifButton";
+            this.ifButton.Size = new System.Drawing.Size(75, 23);
+            this.ifButton.TabIndex = 4;
+            this.ifButton.Text = "IF";
+            this.ifButton.UseVisualStyleBackColor = true;
+            this.ifButton.Click += new System.EventHandler(this.ifButton_Click);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.actionButton);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Controls.Add(this.groupBox5);
@@ -384,6 +386,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1062, 304);
             this.panel3.TabIndex = 10;
+            // 
+            // actionButton
+            // 
+            this.actionButton.Location = new System.Drawing.Point(3, 343);
+            this.actionButton.Name = "actionButton";
+            this.actionButton.Size = new System.Drawing.Size(75, 23);
+            this.actionButton.TabIndex = 6;
+            this.actionButton.Text = "ADD ";
+            this.actionButton.UseVisualStyleBackColor = true;
+            this.actionButton.Click += new System.EventHandler(this.actionButton_Click);
             // 
             // Form1
             // 
@@ -443,13 +455,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.CheckedListBox userisList;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ifNotButton;
+        private System.Windows.Forms.Button ifButton;
         private System.Windows.Forms.CheckBox checkCase;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button actionButton;
     }
 }
 
