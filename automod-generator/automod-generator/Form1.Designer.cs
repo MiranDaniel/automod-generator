@@ -295,7 +295,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.groupBox8);
             this.panel1.Controls.Add(this.ifNotButton);
@@ -569,7 +568,7 @@
             this.settings.ImeMode = System.Windows.Forms.ImeMode.On;
             this.settings.Location = new System.Drawing.Point(3, 8);
             this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(280, 184);
+            this.settings.Size = new System.Drawing.Size(280, 169);
             this.settings.TabIndex = 0;
             // 
             // label5

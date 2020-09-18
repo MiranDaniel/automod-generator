@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using System.IO;
 
 namespace automod_generator
 {
@@ -63,6 +65,10 @@ namespace automod_generator
 
             listType.CheckOnClick = true;
             checkList.CheckOnClick = true;
+
+            
+
+
         }
         public class vars
         {
@@ -76,6 +82,7 @@ namespace automod_generator
 
         public void compile()
         {
+
             string types = "";
             foreach(string te in listType.CheckedItems)
             {
@@ -323,6 +330,9 @@ namespace automod_generator
         {
             clearSelection();
         }
+
+
+
     }
 }
 public static class AppExtensions
