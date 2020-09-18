@@ -61,12 +61,64 @@ namespace automod_generator
             listType.CheckOnClick = true;
             checkList.CheckOnClick = true;
         }
-
-        public void compile(string type)
+        public class vars
         {
+            public static string type = "";
+        }
+
+        public void compile()
+        {
+            output.Text = "test";
+            List<string> data = new List<string>();
+            output.Text = vars.type;
             void addPosCondition()
             {
-
+                string addData = "";
+                string addModifiers = "";
+                string standardData = "";
+                foreach (string item in checkList.CheckedItems)
+                {
+                    if (addData == "")
+                    {
+                        addData = item;
+                    }
+                    else
+                    {
+                        addData = addData + "+" + item;
+                    }
+                }
+                if (checkRegex.Checked || checkCase.Checked) 
+                {   
+                    addModifiers = "(";
+                    if (checkRegex.Checked && checkCase.Checked)
+                    {
+                        addModifiers = addModifiers + "regex, case-sensitive";
+                    }
+                    else
+                    {
+                        if (checkRegex.Checked)
+                        {
+                            addModifiers = addModifiers + "regex";
+                        }
+                        if (checkCase.Checked)
+                        {
+                            addModifiers = addModifiers + "case-sensitive";
+                        }
+                    }
+                    addModifiers = addModifiers + ")";
+                }
+                addData = addData + addModifiers;
+                addData = addData + ":";
+                addData = addData +" " + boxFind.Text;
+                data.Add(addData);
+                foreach(string standard in standardList.CheckedItems)
+                {
+                    if(standardData == "")
+                    {
+                        standardData = standard;
+                    }
+                }
+                data.Add("standard:" + standardData);
             }
             void addNegCondition()
             {
@@ -77,33 +129,38 @@ namespace automod_generator
 
             }
 
-            if(type == "addPosCondition")
+            if (vars.type == "addPosCondition")
             {
                 addPosCondition();
             }
-            if (type == "addNegCondition")
+            if (vars.type == "addNegCondition")
             {
                 addNegCondition();
             }
-            if (type == "addAction")
+            if (vars.type == "addAction")
             {
                 addAction();
             }
+            string o = string.Join("\n", data);
+            output.Text = o;
+
         }
 
         private void ifButton_Click(object sender, EventArgs e)
         {
-            compile("addPosCondition");
+            vars.type = "addPosCondition";
+            compile();
+            
         }
 
         private void ifNotButton_Click(object sender, EventArgs e)
         {
-            compile("addNegCondition");
+            
         }
 
         private void actionButton_Click(object sender, EventArgs e)
         {
-            compile("addAction");
+
         }
     }
 }

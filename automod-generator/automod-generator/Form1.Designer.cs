@@ -55,10 +55,11 @@
             this.ifNotButton = new System.Windows.Forms.Button();
             this.ifButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.actionButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.actionButton = new System.Windows.Forms.Button();
+            this.debugBox = new System.Windows.Forms.RichTextBox();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -350,6 +351,16 @@
             this.panel2.Size = new System.Drawing.Size(529, 375);
             this.panel2.TabIndex = 7;
             // 
+            // actionButton
+            // 
+            this.actionButton.Location = new System.Drawing.Point(3, 343);
+            this.actionButton.Name = "actionButton";
+            this.actionButton.Size = new System.Drawing.Size(75, 23);
+            this.actionButton.TabIndex = 6;
+            this.actionButton.Text = "ADD ";
+            this.actionButton.UseVisualStyleBackColor = true;
+            this.actionButton.Click += new System.EventHandler(this.actionButton_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -387,21 +398,20 @@
             this.panel3.Size = new System.Drawing.Size(1062, 304);
             this.panel3.TabIndex = 10;
             // 
-            // actionButton
+            // debugBox
             // 
-            this.actionButton.Location = new System.Drawing.Point(3, 343);
-            this.actionButton.Name = "actionButton";
-            this.actionButton.Size = new System.Drawing.Size(75, 23);
-            this.actionButton.TabIndex = 6;
-            this.actionButton.Text = "ADD ";
-            this.actionButton.UseVisualStyleBackColor = true;
-            this.actionButton.Click += new System.EventHandler(this.actionButton_Click);
+            this.debugBox.Location = new System.Drawing.Point(12, 412);
+            this.debugBox.Name = "debugBox";
+            this.debugBox.Size = new System.Drawing.Size(284, 275);
+            this.debugBox.TabIndex = 11;
+            this.debugBox.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1439, 759);
+            this.Controls.Add(this.debugBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -463,6 +473,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button actionButton;
+        private System.Windows.Forms.RichTextBox debugBox;
     }
 }
 
