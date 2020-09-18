@@ -66,10 +66,25 @@ namespace automod_generator
             public static string type = "";
             public static List<string> conditionData = new List<string>();
             public static List<string> actionData = new List<string>();
+            public static List<string> modifierData = new List<string>();
+            public static List<string> typeData = new List<string>();
         }
 
         public void compile()
         {
+            string types = "";
+            foreach(string te in listType.CheckedItems)
+            {
+                if(types == "")
+                {
+                    types = te;
+                }
+                else
+                {
+                    types = types + "+" + te;
+                }
+            }
+            vars.typeData.Add("type: "+types);
             void addPosCondition()
             {
                 string addData = "";
@@ -160,8 +175,21 @@ namespace automod_generator
                         }
                     }
                 }
+                foreach(string action in moreactionList.CheckedItems)
+                {
+                    vars.actionData.Add(action+": true");
+                }
             }
-
+            void addModifier()
+            {
+                foreach(string modifier in addList.CheckedItems)
+                {
+                    if(modifier == "moderators_exempt")
+                    {
+                        vars.modifierData.Add(modifier + ": false");
+                    }
+                }
+            }
             if (vars.type == "addPosCondition")
             {
                 addPosCondition();
@@ -174,8 +202,16 @@ namespace automod_generator
             {
                 addAction();
             }
+            if (vars.type == "addModifier")
+            {
+                addModifier();
+            }
+            string t = string.Join("\n", vars.typeData);
+            output.Text = output.Text + t;
             string o = string.Join("\n", vars.conditionData);
-            output.Text = o;
+            output.Text = output.Text + "\n" + o;
+            string m = string.Join("\n", vars.modifierData);
+            output.Text = output.Text + "\n" + m;
             string a = string.Join("\n", vars.actionData);
             output.Text = output.Text +"\n"+ a;
 
@@ -198,11 +234,41 @@ namespace automod_generator
             vars.type = "addAction";
             compile();
         }
-
+        private void modifierButton_Click(object sender, EventArgs e)
+        {
+            vars.type = "addModifier";
+            compile();
+        }
         private void resetButton_Click(object sender, EventArgs e)
         {
             vars.conditionData.Clear();
             vars.actionData.Clear();
+            vars.modifierData.Clear();
+            vars.typeData.Clear();
         }
+
+        private void hideButton_Click(object sender, EventArgs e)
+        {
+            infoPanel.Visible = false;
+        }
+
+        private void contactButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.reddit.com/message/compose?to=/r/mirandaniel");
+        }
+
+        private void feedbackButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/MiranDaniel/automod-generator/issues/new");
+
+        }
+
+        private void repoButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/MiranDaniel/automod-generator");
+
+        }
+
+
     }
 }

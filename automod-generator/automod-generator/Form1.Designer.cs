@@ -59,8 +59,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.debugBox = new System.Windows.Forms.RichTextBox();
             this.resetButton = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.repoButton = new System.Windows.Forms.Button();
+            this.feedbackButton = new System.Windows.Forms.Button();
+            this.contactButton = new System.Windows.Forms.Button();
+            this.hideButton = new System.Windows.Forms.Button();
+            this.infoPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.modifierButton = new System.Windows.Forms.Button();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -73,12 +83,15 @@
             this.groupBox8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.infoPanel.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // boxType
             // 
             this.boxType.Controls.Add(this.listType);
-            this.boxType.Location = new System.Drawing.Point(12, 12);
+            this.boxType.Location = new System.Drawing.Point(3, 3);
             this.boxType.Name = "boxType";
             this.boxType.Size = new System.Drawing.Size(139, 90);
             this.boxType.TabIndex = 0;
@@ -166,10 +179,9 @@
             // 
             // button1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(0, 281);
+            this.button1.Location = new System.Drawing.Point(533, 281);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1062, 23);
+            this.button1.Size = new System.Drawing.Size(529, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
@@ -248,7 +260,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.addList);
-            this.groupBox6.Location = new System.Drawing.Point(157, 12);
+            this.groupBox6.Location = new System.Drawing.Point(3, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(139, 90);
             this.groupBox6.TabIndex = 2;
@@ -257,7 +269,9 @@
             // 
             // addList
             // 
+            this.addList.CheckOnClick = true;
             this.addList.FormattingEnabled = true;
+            this.addList.ImeMode = System.Windows.Forms.ImeMode.On;
             this.addList.Location = new System.Drawing.Point(6, 19);
             this.addList.Name = "addList";
             this.addList.Size = new System.Drawing.Size(120, 64);
@@ -392,6 +406,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.resetButton);
             this.panel3.Controls.Add(this.output);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Location = new System.Drawing.Point(302, 412);
@@ -399,38 +414,155 @@
             this.panel3.Size = new System.Drawing.Size(1062, 304);
             this.panel3.TabIndex = 10;
             // 
-            // debugBox
-            // 
-            this.debugBox.Location = new System.Drawing.Point(12, 412);
-            this.debugBox.Name = "debugBox";
-            this.debugBox.Size = new System.Drawing.Size(284, 275);
-            this.debugBox.TabIndex = 11;
-            this.debugBox.Text = "";
-            // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(12, 693);
+            this.resetButton.Location = new System.Drawing.Point(0, 281);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(284, 23);
+            this.resetButton.Size = new System.Drawing.Size(527, 23);
             this.resetButton.TabIndex = 12;
             this.resetButton.Text = "Reset Memory";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.boxType);
+            this.panel4.Location = new System.Drawing.Point(8, 31);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(288, 101);
+            this.panel4.TabIndex = 11;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox1.Size = new System.Drawing.Size(280, 44);
+            this.richTextBox1.TabIndex = 16;
+            this.richTextBox1.Text = "Created by u/mirandanielcz\nVersion: 0.0.1 pre-release\nMade with love and C#\n\n\n\n";
+            // 
+            // repoButton
+            // 
+            this.repoButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.repoButton.Location = new System.Drawing.Point(0, 42);
+            this.repoButton.Name = "repoButton";
+            this.repoButton.Size = new System.Drawing.Size(75, 40);
+            this.repoButton.TabIndex = 17;
+            this.repoButton.Text = "Open Repository\r\n";
+            this.repoButton.UseVisualStyleBackColor = true;
+            this.repoButton.Click += new System.EventHandler(this.repoButton_Click);
+            // 
+            // feedbackButton
+            // 
+            this.feedbackButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.feedbackButton.Location = new System.Drawing.Point(73, 42);
+            this.feedbackButton.Name = "feedbackButton";
+            this.feedbackButton.Size = new System.Drawing.Size(75, 40);
+            this.feedbackButton.TabIndex = 18;
+            this.feedbackButton.Text = "Report issue/bug";
+            this.feedbackButton.UseVisualStyleBackColor = true;
+            this.feedbackButton.Click += new System.EventHandler(this.feedbackButton_Click);
+            // 
+            // contactButton
+            // 
+            this.contactButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.contactButton.Location = new System.Drawing.Point(147, 42);
+            this.contactButton.Name = "contactButton";
+            this.contactButton.Size = new System.Drawing.Size(75, 40);
+            this.contactButton.TabIndex = 19;
+            this.contactButton.Text = "Contact dev";
+            this.contactButton.UseVisualStyleBackColor = true;
+            this.contactButton.Click += new System.EventHandler(this.contactButton_Click);
+            // 
+            // hideButton
+            // 
+            this.hideButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hideButton.Location = new System.Drawing.Point(221, 42);
+            this.hideButton.Name = "hideButton";
+            this.hideButton.Size = new System.Drawing.Size(58, 40);
+            this.hideButton.TabIndex = 20;
+            this.hideButton.Text = "Hide this menu";
+            this.hideButton.UseVisualStyleBackColor = true;
+            this.hideButton.Click += new System.EventHandler(this.hideButton_Click);
+            // 
+            // infoPanel
+            // 
+            this.infoPanel.Controls.Add(this.richTextBox1);
+            this.infoPanel.Controls.Add(this.hideButton);
+            this.infoPanel.Controls.Add(this.repoButton);
+            this.infoPanel.Controls.Add(this.contactButton);
+            this.infoPanel.Controls.Add(this.feedbackButton);
+            this.infoPanel.Location = new System.Drawing.Point(0, 641);
+            this.infoPanel.Name = "infoPanel";
+            this.infoPanel.Size = new System.Drawing.Size(280, 82);
+            this.infoPanel.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(8, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(288, 23);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Type";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.modifierButton);
+            this.panel5.Controls.Add(this.groupBox6);
+            this.panel5.Location = new System.Drawing.Point(8, 161);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(288, 245);
+            this.panel5.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(8, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(288, 23);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Modifiers";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // modifierButton
+            // 
+            this.modifierButton.Location = new System.Drawing.Point(3, 213);
+            this.modifierButton.Name = "modifierButton";
+            this.modifierButton.Size = new System.Drawing.Size(75, 23);
+            this.modifierButton.TabIndex = 7;
+            this.modifierButton.Text = "ADD ";
+            this.modifierButton.UseVisualStyleBackColor = true;
+            this.modifierButton.Click += new System.EventHandler(this.modifierButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 759);
-            this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.debugBox);
+            this.ClientSize = new System.Drawing.Size(1370, 721);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.infoPanel);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.boxType);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -448,6 +580,9 @@
             this.groupBox8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.infoPanel.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -485,8 +620,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button actionButton;
-        private System.Windows.Forms.RichTextBox debugBox;
         private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button repoButton;
+        private System.Windows.Forms.Button feedbackButton;
+        private System.Windows.Forms.Button contactButton;
+        private System.Windows.Forms.Button hideButton;
+        private System.Windows.Forms.Panel infoPanel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button modifierButton;
     }
 }
-
