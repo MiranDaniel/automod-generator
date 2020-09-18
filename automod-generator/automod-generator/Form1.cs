@@ -72,6 +72,7 @@ namespace automod_generator
         }
         public class vars
         {
+            public static bool debug = false;
             public static string type = "";
             public static string prefix = "";
             public static List<string> conditionData = new List<string>();
@@ -302,7 +303,17 @@ namespace automod_generator
             resetMemory();
         }
 
-
+        public void debug(string data)
+        {
+            if(richTextBox2.Text == "")
+            {
+                richTextBox2.Text = data;
+            }
+            else
+            {
+                richTextBox2.Text = richTextBox2.Text + "\n" + data;
+            }
+        }
 
         private void contactButton_Click(object sender, EventArgs e)
         {
@@ -331,8 +342,28 @@ namespace automod_generator
             clearSelection();
         }
 
+        private void debugButton_Click(object sender, EventArgs e)
+        {
+            if(vars.debug == false)
+            {
+                vars.debug = true;
+                debug("enabled debug");
 
+                label6.Visible = true;
+                richTextBox2.Visible = true;
+                resetButton.Visible = true;
+            }
+            else
+            {
+                vars.debug = false;
+                debug("disabled debug");
 
+                label6.Visible = false;
+                richTextBox2.Visible = false;
+                resetButton.Visible = false;
+            }
+            
+        }
     }
 }
 public static class AppExtensions

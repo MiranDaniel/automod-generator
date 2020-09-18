@@ -58,6 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.clroutButton = new System.Windows.Forms.Button();
             this.clrselButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -67,6 +69,7 @@
             this.feedbackButton = new System.Windows.Forms.Button();
             this.contactButton = new System.Windows.Forms.Button();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.debugButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.modifierButton = new System.Windows.Forms.Button();
@@ -74,6 +77,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.settings = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -400,6 +404,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.richTextBox2);
             this.panel3.Controls.Add(this.clroutButton);
             this.panel3.Controls.Add(this.clrselButton);
             this.panel3.Controls.Add(this.resetButton);
@@ -408,6 +414,31 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1062, 304);
             this.panel3.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.Location = new System.Drawing.Point(22, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(712, 55);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "DEBUGGING MODE ENABLED";
+            this.label6.Visible = false;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.White;
+            this.richTextBox2.Location = new System.Drawing.Point(757, 0);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBox2.Size = new System.Drawing.Size(305, 275);
+            this.richTextBox2.TabIndex = 15;
+            this.richTextBox2.Text = "";
+            this.richTextBox2.Visible = false;
             // 
             // clroutButton
             // 
@@ -431,7 +462,7 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(3, 3);
+            this.resetButton.Location = new System.Drawing.Point(643, 23);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(91, 23);
             this.resetButton.TabIndex = 12;
@@ -474,9 +505,9 @@
             // feedbackButton
             // 
             this.feedbackButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.feedbackButton.Location = new System.Drawing.Point(73, 42);
+            this.feedbackButton.Location = new System.Drawing.Point(75, 42);
             this.feedbackButton.Name = "feedbackButton";
-            this.feedbackButton.Size = new System.Drawing.Size(75, 40);
+            this.feedbackButton.Size = new System.Drawing.Size(75, 42);
             this.feedbackButton.TabIndex = 18;
             this.feedbackButton.Text = "Report issue/bug";
             this.feedbackButton.UseVisualStyleBackColor = true;
@@ -485,7 +516,7 @@
             // contactButton
             // 
             this.contactButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.contactButton.Location = new System.Drawing.Point(147, 42);
+            this.contactButton.Location = new System.Drawing.Point(217, -11);
             this.contactButton.Name = "contactButton";
             this.contactButton.Size = new System.Drawing.Size(75, 40);
             this.contactButton.TabIndex = 19;
@@ -495,14 +526,27 @@
             // 
             // infoPanel
             // 
+            this.infoPanel.Controls.Add(this.button1);
+            this.infoPanel.Controls.Add(this.debugButton);
             this.infoPanel.Controls.Add(this.richTextBox1);
             this.infoPanel.Controls.Add(this.repoButton);
-            this.infoPanel.Controls.Add(this.contactButton);
             this.infoPanel.Controls.Add(this.feedbackButton);
+            this.infoPanel.Controls.Add(this.contactButton);
             this.infoPanel.Location = new System.Drawing.Point(0, 641);
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Size = new System.Drawing.Size(296, 82);
             this.infoPanel.TabIndex = 21;
+            // 
+            // debugButton
+            // 
+            this.debugButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.debugButton.Location = new System.Drawing.Point(225, 43);
+            this.debugButton.Name = "debugButton";
+            this.debugButton.Size = new System.Drawing.Size(75, 42);
+            this.debugButton.TabIndex = 20;
+            this.debugButton.Text = "Toggle DEBUG";
+            this.debugButton.UseVisualStyleBackColor = true;
+            this.debugButton.Click += new System.EventHandler(this.debugButton_Click);
             // 
             // label3
             // 
@@ -585,6 +629,16 @@
             this.label5.Text = "Settings";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(150, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Contact dev";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,6 +675,7 @@
             this.groupBox8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.infoPanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -677,5 +732,9 @@
         private System.Windows.Forms.CheckedListBox settings;
         private System.Windows.Forms.Button clroutButton;
         private System.Windows.Forms.Button clrselButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button debugButton;
+        private System.Windows.Forms.Button button1;
     }
 }
