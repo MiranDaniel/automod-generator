@@ -1,0 +1,9 @@
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Release\automod-generator.exe.config
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Release\automod-generator.exe
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Release\automod-generator.pdb
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod_generator.Form1.resources
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod_generator.Properties.Resources.resources
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.csproj.GenerateResource.cache
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.csproj.CoreCompileInputs.cache
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.exe
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.pdb

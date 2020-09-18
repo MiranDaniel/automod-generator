@@ -37,7 +37,6 @@
             this.boxFind = new System.Windows.Forms.RichTextBox();
             this.checkRegex = new System.Windows.Forms.CheckBox();
             this.output = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.actionList = new System.Windows.Forms.CheckedListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -59,18 +58,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.clroutButton = new System.Windows.Forms.Button();
+            this.clrselButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.repoButton = new System.Windows.Forms.Button();
             this.feedbackButton = new System.Windows.Forms.Button();
             this.contactButton = new System.Windows.Forms.Button();
-            this.hideButton = new System.Windows.Forms.Button();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.modifierButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.settings = new System.Windows.Forms.CheckedListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,6 +89,7 @@
             this.panel4.SuspendLayout();
             this.infoPanel.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // boxType
@@ -114,7 +118,7 @@
             this.groupBox2.Size = new System.Drawing.Size(207, 154);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Search Checks";
             // 
             // checkList
             // 
@@ -137,7 +141,7 @@
             this.groupBox1.Size = new System.Drawing.Size(315, 154);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Search Checks Regex";
             // 
             // checkCase
             // 
@@ -177,15 +181,6 @@
             this.output.TabIndex = 2;
             this.output.Text = "";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(533, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(529, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.actionList);
@@ -194,7 +189,7 @@
             this.groupBox3.Size = new System.Drawing.Size(138, 154);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Actions";
             // 
             // actionList
             // 
@@ -216,7 +211,7 @@
             this.groupBox4.Size = new System.Drawing.Size(318, 154);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "Action reasons";
             // 
             // boxReason
             // 
@@ -244,7 +239,7 @@
             this.groupBox5.Size = new System.Drawing.Size(138, 163);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
+            this.groupBox5.Text = "Sets";
             // 
             // moreactionList
             // 
@@ -265,7 +260,7 @@
             this.groupBox6.Size = new System.Drawing.Size(139, 90);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Type";
+            this.groupBox6.Text = "Modifiers";
             // 
             // addList
             // 
@@ -285,7 +280,7 @@
             this.groupBox7.Size = new System.Drawing.Size(207, 154);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
+            this.groupBox7.Text = "Standards";
             // 
             // standardList
             // 
@@ -321,7 +316,7 @@
             this.groupBox8.Size = new System.Drawing.Size(207, 154);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
+            this.groupBox8.Text = "User Checks";
             // 
             // userisList
             // 
@@ -406,22 +401,44 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.clroutButton);
+            this.panel3.Controls.Add(this.clrselButton);
             this.panel3.Controls.Add(this.resetButton);
             this.panel3.Controls.Add(this.output);
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Location = new System.Drawing.Point(302, 412);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1062, 304);
             this.panel3.TabIndex = 10;
             // 
+            // clroutButton
+            // 
+            this.clroutButton.Location = new System.Drawing.Point(533, 278);
+            this.clroutButton.Name = "clroutButton";
+            this.clroutButton.Size = new System.Drawing.Size(529, 23);
+            this.clroutButton.TabIndex = 14;
+            this.clroutButton.Text = "Clear Output";
+            this.clroutButton.UseVisualStyleBackColor = true;
+            this.clroutButton.Click += new System.EventHandler(this.clroutButton_Click);
+            // 
+            // clrselButton
+            // 
+            this.clrselButton.Location = new System.Drawing.Point(0, 278);
+            this.clrselButton.Name = "clrselButton";
+            this.clrselButton.Size = new System.Drawing.Size(529, 23);
+            this.clrselButton.TabIndex = 13;
+            this.clrselButton.Text = "Clear Selection";
+            this.clrselButton.UseVisualStyleBackColor = true;
+            this.clrselButton.Click += new System.EventHandler(this.clrselButton_Click);
+            // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(0, 281);
+            this.resetButton.Location = new System.Drawing.Point(3, 3);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(527, 23);
+            this.resetButton.Size = new System.Drawing.Size(91, 23);
             this.resetButton.TabIndex = 12;
             this.resetButton.Text = "Reset Memory";
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Visible = false;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // panel4
@@ -440,9 +457,9 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(280, 44);
+            this.richTextBox1.Size = new System.Drawing.Size(296, 44);
             this.richTextBox1.TabIndex = 16;
-            this.richTextBox1.Text = "Created by u/mirandanielcz\nVersion: 0.0.1 pre-release\nMade with love and C#\n\n\n\n";
+            this.richTextBox1.Text = "Created by u/mirandanielcz\nVersion: 0.0.2 beta\nMade with love and C#\n\n\n\n";
             // 
             // repoButton
             // 
@@ -477,27 +494,15 @@
             this.contactButton.UseVisualStyleBackColor = true;
             this.contactButton.Click += new System.EventHandler(this.contactButton_Click);
             // 
-            // hideButton
-            // 
-            this.hideButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hideButton.Location = new System.Drawing.Point(221, 42);
-            this.hideButton.Name = "hideButton";
-            this.hideButton.Size = new System.Drawing.Size(58, 40);
-            this.hideButton.TabIndex = 20;
-            this.hideButton.Text = "Hide this menu";
-            this.hideButton.UseVisualStyleBackColor = true;
-            this.hideButton.Click += new System.EventHandler(this.hideButton_Click);
-            // 
             // infoPanel
             // 
             this.infoPanel.Controls.Add(this.richTextBox1);
-            this.infoPanel.Controls.Add(this.hideButton);
             this.infoPanel.Controls.Add(this.repoButton);
             this.infoPanel.Controls.Add(this.contactButton);
             this.infoPanel.Controls.Add(this.feedbackButton);
             this.infoPanel.Location = new System.Drawing.Point(0, 641);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(280, 82);
+            this.infoPanel.Size = new System.Drawing.Size(296, 82);
             this.infoPanel.TabIndex = 21;
             // 
             // label3
@@ -524,6 +529,16 @@
             this.panel5.Size = new System.Drawing.Size(288, 245);
             this.panel5.TabIndex = 12;
             // 
+            // modifierButton
+            // 
+            this.modifierButton.Location = new System.Drawing.Point(3, 213);
+            this.modifierButton.Name = "modifierButton";
+            this.modifierButton.Size = new System.Drawing.Size(75, 23);
+            this.modifierButton.TabIndex = 7;
+            this.modifierButton.Text = "ADD ";
+            this.modifierButton.UseVisualStyleBackColor = true;
+            this.modifierButton.Click += new System.EventHandler(this.modifierButton_Click);
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -538,21 +553,46 @@
             this.label4.Text = "Modifiers";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // modifierButton
+            // panel6
             // 
-            this.modifierButton.Location = new System.Drawing.Point(3, 213);
-            this.modifierButton.Name = "modifierButton";
-            this.modifierButton.Size = new System.Drawing.Size(75, 23);
-            this.modifierButton.TabIndex = 7;
-            this.modifierButton.Text = "ADD ";
-            this.modifierButton.UseVisualStyleBackColor = true;
-            this.modifierButton.Click += new System.EventHandler(this.modifierButton_Click);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.settings);
+            this.panel6.Location = new System.Drawing.Point(8, 435);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(288, 200);
+            this.panel6.TabIndex = 24;
+            // 
+            // settings
+            // 
+            this.settings.CheckOnClick = true;
+            this.settings.FormattingEnabled = true;
+            this.settings.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.settings.Location = new System.Drawing.Point(3, 8);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(280, 184);
+            this.settings.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(8, 409);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(288, 23);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Settings";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 721);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label3);
@@ -563,8 +603,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1386, 760);
+            this.MinimumSize = new System.Drawing.Size(1386, 760);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Reddit Automoderator Generator beta0.0.2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.boxType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -583,6 +625,7 @@
             this.panel4.ResumeLayout(false);
             this.infoPanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -596,7 +639,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkRegex;
         private System.Windows.Forms.RichTextBox output;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox boxFind;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckedListBox actionList;
@@ -626,11 +668,15 @@
         private System.Windows.Forms.Button repoButton;
         private System.Windows.Forms.Button feedbackButton;
         private System.Windows.Forms.Button contactButton;
-        private System.Windows.Forms.Button hideButton;
         private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button modifierButton;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckedListBox settings;
+        private System.Windows.Forms.Button clroutButton;
+        private System.Windows.Forms.Button clrselButton;
     }
 }

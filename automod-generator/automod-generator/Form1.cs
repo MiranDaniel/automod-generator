@@ -56,6 +56,9 @@ namespace automod_generator
             userisList.Items.Add("is_contributor");
             userisList.Items.Add("is_moderator");
 
+            settings.Items.Add("Clear selection after adding.");
+            settings.SetItemCheckState(0, CheckState.Checked);
+
             addList.Items.Add("moderators_exempt");
 
             listType.CheckOnClick = true;
@@ -64,6 +67,7 @@ namespace automod_generator
         public class vars
         {
             public static string type = "";
+            public static string prefix = "";
             public static List<string> conditionData = new List<string>();
             public static List<string> actionData = new List<string>();
             public static List<string> modifierData = new List<string>();
@@ -84,7 +88,10 @@ namespace automod_generator
                     types = types + "+" + te;
                 }
             }
-            vars.typeData.Add("type: "+types);
+            if(types != "")
+            {
+                vars.typeData.Add("type: " + types);
+            }
             void addPosCondition()
             {
                 string addData = "";
@@ -130,7 +137,10 @@ namespace automod_generator
                     addData = addData + ":";
                 }
                 addData = addData +" " + boxFind.Text;
-                vars.conditionData.Add(addData);
+                if(addData != "")
+                {
+                    vars.conditionData.Add(vars.prefix + addData);
+                }
                 foreach (string standard in standardList.CheckedItems)
                 {
                     if(standardData == "")
@@ -149,12 +159,21 @@ namespace automod_generator
                         vars.conditionData.Add("author:");
                     }
                     userisData = useris;
-                    vars.conditionData.Add("    " + useris+ ": false");
+                    if(vars.prefix == "")
+                    {
+                        vars.conditionData.Add("    " + useris + ": false");
+                    }
+                    else
+                    {
+                        vars.conditionData.Add("    " + useris + ": true");
+                    }
+                    
                 }               
             }
             void addNegCondition()
             {
-
+                vars.prefix = "~";
+                addPosCondition();
             }
             void addAction()
             {
@@ -214,7 +233,31 @@ namespace automod_generator
             output.Text = output.Text + "\n" + m;
             string a = string.Join("\n", vars.actionData);
             output.Text = output.Text +"\n"+ a;
+            resetMemory();
+            foreach(string item in settings.CheckedItems)
+            {
+                if(item == "Clear selection after adding.")
+                {
+                    clearSelection();
+                }
+            }
 
+        }
+
+        public void clearSelection()
+        {
+            checkList.ClearSelected();
+            checkList.UncheckAllItems();
+            listType.ClearSelected();
+            listType.UncheckAllItems();
+            actionList.ClearSelected();
+            actionList.UncheckAllItems();
+            moreactionList.ClearSelected();
+            moreactionList.UncheckAllItems();
+            standardList.ClearSelected();
+            standardList.UncheckAllItems();
+            userisList.ClearSelected();
+            userisList.UncheckAllItems();
         }
 
         private void ifButton_Click(object sender, EventArgs e)
@@ -226,7 +269,8 @@ namespace automod_generator
 
         private void ifNotButton_Click(object sender, EventArgs e)
         {
-            
+            vars.type = "addNegCondition";
+            compile();
         }
 
         private void actionButton_Click(object sender, EventArgs e)
@@ -239,18 +283,19 @@ namespace automod_generator
             vars.type = "addModifier";
             compile();
         }
-        private void resetButton_Click(object sender, EventArgs e)
+        private void resetMemory()
         {
             vars.conditionData.Clear();
             vars.actionData.Clear();
             vars.modifierData.Clear();
             vars.typeData.Clear();
         }
-
-        private void hideButton_Click(object sender, EventArgs e)
+        private void resetButton_Click(object sender, EventArgs e)
         {
-            infoPanel.Visible = false;
+            resetMemory();
         }
+
+
 
         private void contactButton_Click(object sender, EventArgs e)
         {
@@ -269,6 +314,22 @@ namespace automod_generator
 
         }
 
+        private void clroutButton_Click(object sender, EventArgs e)
+        {
+            output.Text = "";
+        }
 
+        private void clrselButton_Click(object sender, EventArgs e)
+        {
+            clearSelection();
+        }
+    }
+}
+public static class AppExtensions
+{
+    public static void UncheckAllItems(this System.Windows.Forms.CheckedListBox clb)
+    {
+        while (clb.CheckedIndices.Count > 0)
+            clb.SetItemChecked(clb.CheckedIndices[0], false);
     }
 }

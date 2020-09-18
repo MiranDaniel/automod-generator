@@ -1,7 +1,6 @@
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\automod-generator.exe.config
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\automod-generator.exe
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\automod-generator.pdb
-C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod-generator.csprojAssemblyReference.cache
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Form1.resources
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Properties.Resources.resources
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod-generator.csproj.GenerateResource.cache
