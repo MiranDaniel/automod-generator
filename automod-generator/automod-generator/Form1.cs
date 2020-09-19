@@ -18,12 +18,20 @@ namespace automod_generator
             listType.Items.Add("any");
             listType.Items.Add("submission");
             listType.Items.Add("comment");
+            listType.Items.Add("text submission");
+            listType.Items.Add("link submission");
+            listType.Items.Add("crosspost submission");
+            listType.Items.Add("poll submission");
+            listType.Items.Add("gallery submission");
 
             checkList.Items.Add("body");
             checkList.Items.Add("title");
             checkList.Items.Add("domain");
             checkList.Items.Add("url");
             checkList.Items.Add("flair_text");
+            checkList.Items.Add("flair_css_class");
+            checkList.Items.Add("flair_template_id");
+            checkList.Items.Add("crosspost_title");
 
             actionList.Items.Add("remove");
             actionList.Items.Add("approve");
@@ -35,6 +43,8 @@ namespace automod_generator
             moreactionList.Items.Add("set_nsfw");
             moreactionList.Items.Add("set_spoiler");
             moreactionList.Items.Add("set_locked");
+            moreactionList.Items.Add("set_contest_mode");
+            moreactionList.Items.Add("set_original_content");
 
             standardList.Items.Add("image hosting sites");
             standardList.Items.Add("direct image links");
@@ -50,6 +60,18 @@ namespace automod_generator
             userisList.Items.Add("is_contributor");
             userisList.Items.Add("is_moderator");
 
+            priorityList.Items.Add("priority");
+
+            regexmodifierList.Items.Add("regex");
+            regexmodifierList.Items.Add("includes-word");
+            regexmodifierList.Items.Add("includes");
+            regexmodifierList.Items.Add("starts-with");
+            regexmodifierList.Items.Add("ends-with");
+            regexmodifierList.Items.Add("full-exact");
+            regexmodifierList.Items.Add("full-text");
+
+            modmailList.Items.Add("modmail");
+            modmailTitleList.Items.Add("modmail_subject");
             settings.Items.Add("Clear selection after adding.");
             settings.SetItemCheckState(0, CheckState.Checked);
 
@@ -110,24 +132,20 @@ namespace automod_generator
                     }
                 }
 
-                if (checkRegex.Checked || checkCase.Checked)
+                foreach (string mod in regexmodifierList.CheckedItems)
                 {
-                    addModifiers = "(";
-                    if (checkRegex.Checked && checkCase.Checked)
+                    if (addModifiers == "")
                     {
-                        addModifiers = addModifiers + "regex, case-sensitive";
+                        addModifiers = addModifiers + mod;
                     }
                     else
                     {
-                        if (checkRegex.Checked)
-                        {
-                            addModifiers = addModifiers + "regex";
-                        }
-                        if (checkCase.Checked)
-                        {
-                            addModifiers = addModifiers + "case-sensitive";
-                        }
+                        addModifiers = addModifiers + "," + mod;
                     }
+                }
+                if (addModifiers != "")
+                {
+                    addData = addData + "(";
                     addModifiers = addModifiers + ")";
                 }
                 addData = addData + addModifiers;
@@ -198,6 +216,16 @@ namespace automod_generator
                 {
                     vars.actionData.Add(action + ": true");
                 }
+                foreach (string modmail0 in modmailList.CheckedItems)
+                {
+
+                    foreach (string modmail1 in modmailTitleList.CheckedItems)
+                    {
+                        vars.actionData.Add("modmail_subject: " + modtitleBox.Text);
+                    }
+                    vars.actionData.Add("modmail: " + modBox.Text);
+                }
+
             }
             void addModifier()
             {
@@ -207,6 +235,10 @@ namespace automod_generator
                     {
                         vars.modifierData.Add(modifier + ": false");
                     }
+                }
+                foreach (string check in priorityList.CheckedItems)
+                {
+                    vars.modifierData.Add(check + ": " + priorityValueBox.Text);
                 }
             }
             if (vars.type == "addPosCondition")

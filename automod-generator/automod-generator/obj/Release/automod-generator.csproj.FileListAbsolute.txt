@@ -7,4 +7,3 @@ C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generato
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.csproj.CoreCompileInputs.cache
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.exe
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.pdb
-C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Release\automod-generator.csprojAssemblyReference.cache

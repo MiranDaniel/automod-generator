@@ -33,9 +33,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkList = new System.Windows.Forms.CheckedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkCase = new System.Windows.Forms.CheckBox();
+            this.regexmodifierList = new System.Windows.Forms.CheckedListBox();
             this.boxFind = new System.Windows.Forms.RichTextBox();
-            this.checkRegex = new System.Windows.Forms.CheckBox();
             this.output = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.actionList = new System.Windows.Forms.CheckedListBox();
@@ -54,6 +53,11 @@
             this.ifNotButton = new System.Windows.Forms.Button();
             this.ifButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.modBox = new System.Windows.Forms.RichTextBox();
+            this.modtitleBox = new System.Windows.Forms.RichTextBox();
+            this.modmailList = new System.Windows.Forms.CheckedListBox();
+            this.modmailTitleList = new System.Windows.Forms.CheckedListBox();
             this.actionButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,17 +71,19 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.repoButton = new System.Windows.Forms.Button();
             this.feedbackButton = new System.Windows.Forms.Button();
-            this.contactButton = new System.Windows.Forms.Button();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.debugButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.priorityValueBox = new System.Windows.Forms.RichTextBox();
+            this.priorityList = new System.Windows.Forms.CheckedListBox();
             this.modifierButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.settings = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,10 +95,12 @@
             this.panel1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.infoPanel.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +109,7 @@
             this.boxType.Controls.Add(this.listType);
             this.boxType.Location = new System.Drawing.Point(3, 3);
             this.boxType.Name = "boxType";
-            this.boxType.Size = new System.Drawing.Size(139, 90);
+            this.boxType.Size = new System.Drawing.Size(280, 90);
             this.boxType.TabIndex = 0;
             this.boxType.TabStop = false;
             this.boxType.Text = "Type";
@@ -110,8 +118,9 @@
             // 
             this.listType.FormattingEnabled = true;
             this.listType.Location = new System.Drawing.Point(6, 19);
+            this.listType.MultiColumn = true;
             this.listType.Name = "listType";
-            this.listType.Size = new System.Drawing.Size(120, 64);
+            this.listType.Size = new System.Drawing.Size(261, 64);
             this.listType.TabIndex = 1;
             // 
             // groupBox2
@@ -137,9 +146,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkCase);
+            this.groupBox1.Controls.Add(this.regexmodifierList);
             this.groupBox1.Controls.Add(this.boxFind);
-            this.groupBox1.Controls.Add(this.checkRegex);
             this.groupBox1.Location = new System.Drawing.Point(211, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(315, 154);
@@ -147,33 +155,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Checks Regex";
             // 
-            // checkCase
+            // regexmodifierList
             // 
-            this.checkCase.AutoSize = true;
-            this.checkCase.Location = new System.Drawing.Point(69, 19);
-            this.checkCase.Name = "checkCase";
-            this.checkCase.Size = new System.Drawing.Size(96, 17);
-            this.checkCase.TabIndex = 3;
-            this.checkCase.Text = "Case Sensitive";
-            this.checkCase.UseVisualStyleBackColor = true;
+            this.regexmodifierList.CausesValidation = false;
+            this.regexmodifierList.CheckOnClick = true;
+            this.regexmodifierList.FormattingEnabled = true;
+            this.regexmodifierList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.regexmodifierList.Location = new System.Drawing.Point(5, 20);
+            this.regexmodifierList.MultiColumn = true;
+            this.regexmodifierList.Name = "regexmodifierList";
+            this.regexmodifierList.Size = new System.Drawing.Size(303, 64);
+            this.regexmodifierList.TabIndex = 3;
             // 
             // boxFind
             // 
-            this.boxFind.Location = new System.Drawing.Point(6, 42);
+            this.boxFind.Location = new System.Drawing.Point(5, 86);
             this.boxFind.Name = "boxFind";
-            this.boxFind.Size = new System.Drawing.Size(303, 101);
+            this.boxFind.Size = new System.Drawing.Size(304, 57);
             this.boxFind.TabIndex = 2;
             this.boxFind.Text = "";
-            // 
-            // checkRegex
-            // 
-            this.checkRegex.AutoSize = true;
-            this.checkRegex.Location = new System.Drawing.Point(6, 19);
-            this.checkRegex.Name = "checkRegex";
-            this.checkRegex.Size = new System.Drawing.Size(57, 17);
-            this.checkRegex.TabIndex = 2;
-            this.checkRegex.Text = "Regex";
-            this.checkRegex.UseVisualStyleBackColor = true;
             // 
             // output
             // 
@@ -355,6 +355,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.groupBox10);
             this.panel2.Controls.Add(this.actionButton);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.groupBox4);
@@ -363,6 +364,57 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(529, 375);
             this.panel2.TabIndex = 7;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.modBox);
+            this.groupBox10.Controls.Add(this.modtitleBox);
+            this.groupBox10.Controls.Add(this.modmailList);
+            this.groupBox10.Controls.Add(this.modmailTitleList);
+            this.groupBox10.Location = new System.Drawing.Point(147, 164);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(318, 163);
+            this.groupBox10.TabIndex = 6;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Modmail";
+            // 
+            // modBox
+            // 
+            this.modBox.Location = new System.Drawing.Point(6, 108);
+            this.modBox.Name = "modBox";
+            this.modBox.Size = new System.Drawing.Size(303, 45);
+            this.modBox.TabIndex = 5;
+            this.modBox.Text = "";
+            // 
+            // modtitleBox
+            // 
+            this.modtitleBox.Location = new System.Drawing.Point(6, 41);
+            this.modtitleBox.Name = "modtitleBox";
+            this.modtitleBox.Size = new System.Drawing.Size(303, 36);
+            this.modtitleBox.TabIndex = 3;
+            this.modtitleBox.Text = "";
+            // 
+            // modmailList
+            // 
+            this.modmailList.CausesValidation = false;
+            this.modmailList.CheckOnClick = true;
+            this.modmailList.FormattingEnabled = true;
+            this.modmailList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.modmailList.Location = new System.Drawing.Point(6, 83);
+            this.modmailList.Name = "modmailList";
+            this.modmailList.Size = new System.Drawing.Size(303, 19);
+            this.modmailList.TabIndex = 4;
+            // 
+            // modmailTitleList
+            // 
+            this.modmailTitleList.CausesValidation = false;
+            this.modmailTitleList.CheckOnClick = true;
+            this.modmailTitleList.FormattingEnabled = true;
+            this.modmailTitleList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.modmailTitleList.Location = new System.Drawing.Point(6, 19);
+            this.modmailTitleList.Name = "modmailTitleList";
+            this.modmailTitleList.Size = new System.Drawing.Size(303, 19);
+            this.modmailTitleList.TabIndex = 3;
             // 
             // actionButton
             // 
@@ -489,14 +541,14 @@
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBox1.Size = new System.Drawing.Size(296, 44);
             this.richTextBox1.TabIndex = 16;
-            this.richTextBox1.Text = "Created by u/mirandanielcz\nVersion: 0.0.2 beta\nMade with love and C#\n\n\n\n";
+            this.richTextBox1.Text = "Created by u/mirandanielcz\nVersion: 0.0.3 beta\nMade with love and C#\n\n\n\n";
             // 
             // repoButton
             // 
-            this.repoButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.repoButton.Location = new System.Drawing.Point(0, 42);
+            this.repoButton.Font = new System.Drawing.Font("Consolas", 7F);
+            this.repoButton.Location = new System.Drawing.Point(225, 38);
             this.repoButton.Name = "repoButton";
-            this.repoButton.Size = new System.Drawing.Size(75, 40);
+            this.repoButton.Size = new System.Drawing.Size(71, 42);
             this.repoButton.TabIndex = 17;
             this.repoButton.Text = "Open Repository\r\n";
             this.repoButton.UseVisualStyleBackColor = true;
@@ -504,49 +556,47 @@
             // 
             // feedbackButton
             // 
-            this.feedbackButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.feedbackButton.Location = new System.Drawing.Point(75, 42);
+            this.feedbackButton.Font = new System.Drawing.Font("Consolas", 7F);
+            this.feedbackButton.Location = new System.Drawing.Point(75, 38);
             this.feedbackButton.Name = "feedbackButton";
-            this.feedbackButton.Size = new System.Drawing.Size(75, 42);
+            this.feedbackButton.Size = new System.Drawing.Size(71, 42);
             this.feedbackButton.TabIndex = 18;
-            this.feedbackButton.Text = "Report issue/bug";
+            this.feedbackButton.Text = "Report bugs";
             this.feedbackButton.UseVisualStyleBackColor = true;
             this.feedbackButton.Click += new System.EventHandler(this.feedbackButton_Click);
             // 
-            // contactButton
-            // 
-            this.contactButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.contactButton.Location = new System.Drawing.Point(217, -11);
-            this.contactButton.Name = "contactButton";
-            this.contactButton.Size = new System.Drawing.Size(75, 40);
-            this.contactButton.TabIndex = 19;
-            this.contactButton.Text = "Contact dev";
-            this.contactButton.UseVisualStyleBackColor = true;
-            this.contactButton.Click += new System.EventHandler(this.contactButton_Click);
-            // 
             // infoPanel
             // 
-            this.infoPanel.Controls.Add(this.button1);
-            this.infoPanel.Controls.Add(this.debugButton);
             this.infoPanel.Controls.Add(this.richTextBox1);
+            this.infoPanel.Controls.Add(this.debugButton);
             this.infoPanel.Controls.Add(this.repoButton);
             this.infoPanel.Controls.Add(this.feedbackButton);
-            this.infoPanel.Controls.Add(this.contactButton);
+            this.infoPanel.Controls.Add(this.button1);
             this.infoPanel.Location = new System.Drawing.Point(0, 641);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(296, 82);
+            this.infoPanel.Size = new System.Drawing.Size(296, 80);
             this.infoPanel.TabIndex = 21;
             // 
             // debugButton
             // 
-            this.debugButton.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.debugButton.Location = new System.Drawing.Point(225, 43);
+            this.debugButton.Font = new System.Drawing.Font("Consolas", 7F);
+            this.debugButton.Location = new System.Drawing.Point(0, 41);
             this.debugButton.Name = "debugButton";
-            this.debugButton.Size = new System.Drawing.Size(75, 42);
+            this.debugButton.Size = new System.Drawing.Size(71, 42);
             this.debugButton.TabIndex = 20;
             this.debugButton.Text = "Toggle DEBUG";
             this.debugButton.UseVisualStyleBackColor = true;
             this.debugButton.Click += new System.EventHandler(this.debugButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Consolas", 7F);
+            this.button1.Location = new System.Drawing.Point(150, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 42);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Contact dev";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -565,12 +615,42 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.groupBox9);
             this.panel5.Controls.Add(this.modifierButton);
             this.panel5.Controls.Add(this.groupBox6);
             this.panel5.Location = new System.Drawing.Point(8, 161);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(288, 245);
             this.panel5.TabIndex = 12;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.priorityValueBox);
+            this.groupBox9.Controls.Add(this.priorityList);
+            this.groupBox9.Location = new System.Drawing.Point(144, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(139, 90);
+            this.groupBox9.TabIndex = 3;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Priority";
+            // 
+            // priorityValueBox
+            // 
+            this.priorityValueBox.Location = new System.Drawing.Point(6, 44);
+            this.priorityValueBox.Name = "priorityValueBox";
+            this.priorityValueBox.Size = new System.Drawing.Size(120, 40);
+            this.priorityValueBox.TabIndex = 2;
+            this.priorityValueBox.Text = "";
+            // 
+            // priorityList
+            // 
+            this.priorityList.CheckOnClick = true;
+            this.priorityList.FormattingEnabled = true;
+            this.priorityList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.priorityList.Location = new System.Drawing.Point(6, 19);
+            this.priorityList.Name = "priorityList";
+            this.priorityList.Size = new System.Drawing.Size(120, 19);
+            this.priorityList.TabIndex = 1;
             // 
             // modifierButton
             // 
@@ -629,16 +709,6 @@
             this.label5.Text = "Settings";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(150, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Contact dev";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,12 +729,11 @@
             this.MaximumSize = new System.Drawing.Size(1386, 760);
             this.MinimumSize = new System.Drawing.Size(1386, 760);
             this.Name = "Form1";
-            this.Text = "Reddit Automoderator Generator beta0.0.2";
+            this.Text = "Reddit Automoderator Generator beta0.0.3";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.boxType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -674,11 +743,13 @@
             this.panel1.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.infoPanel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -691,7 +762,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckedListBox checkList;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkRegex;
         private System.Windows.Forms.RichTextBox output;
         private System.Windows.Forms.RichTextBox boxFind;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -710,7 +780,6 @@
         private System.Windows.Forms.CheckedListBox userisList;
         private System.Windows.Forms.Button ifNotButton;
         private System.Windows.Forms.Button ifButton;
-        private System.Windows.Forms.CheckBox checkCase;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -721,7 +790,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button repoButton;
         private System.Windows.Forms.Button feedbackButton;
-        private System.Windows.Forms.Button contactButton;
         private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
@@ -736,5 +804,14 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button debugButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.RichTextBox priorityValueBox;
+        private System.Windows.Forms.CheckedListBox priorityList;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.CheckedListBox modmailTitleList;
+        private System.Windows.Forms.RichTextBox modBox;
+        private System.Windows.Forms.RichTextBox modtitleBox;
+        private System.Windows.Forms.CheckedListBox modmailList;
+        private System.Windows.Forms.CheckedListBox regexmodifierList;
     }
 }
