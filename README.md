@@ -1,6 +1,15 @@
 # Reddit AutoModerator config generator
----
 
+![commits](https://img.shields.io/github/commit-activity/m/MiranDaniel/automod-generator?style=flat-square)
+![issues](https://img.shields.io/github/issues-raw/MiranDaniel/automod-generator?style=flat-square)
+![pr](https://img.shields.io/github/issues-pr-raw/MiranDaniel/automod-generator?style=flat-square)
+
+## https://discord.gg/JhNeVSq (Discord support server)
+
+
+
+
+---
 # Supported functions:
 
 ## Checks
