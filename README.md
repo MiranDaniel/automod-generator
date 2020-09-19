@@ -6,8 +6,9 @@
 
 ## https://discord.gg/JhNeVSq (Discord support server)
 
+---
 
-
+AutoModerator function coverage: `49.09%` (beta0.0.3)
 
 ---
 # Supported functions:
