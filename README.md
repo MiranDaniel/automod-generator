@@ -18,14 +18,22 @@
 any
 submission
 comment
+text submission
+link submission
+crosspost submission
+poll submission
+gallery submission
 ```
 **Search Checks**
 ```
-title
 body
+title
 domain
 url
 flair_text
+flair_css_class
+flair_template_id
+crosspost_title
 ```
 
 **User Checks**
@@ -39,7 +47,12 @@ is_moderator
 **Modifiers**
 ```
 (regex)
-(case-sensitive)
+(includes-word)
+(includes)
+(starts-with)
+(ends-with)
+(full-exact)
+(full-text)
 ```
 
 **Standards**
@@ -74,10 +87,18 @@ set_sticky
 set_nsfw
 set_spoiler
 set_locked
+set_contest_mode
+set_original_content
+```
+**Modmail**
+```
+modmail_subject
+modmail
 ```
 
 ## Other
 
 ```
 moderators_exempt
+priority
 ```
