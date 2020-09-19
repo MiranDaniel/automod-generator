@@ -73,6 +73,23 @@ namespace automod_generator
 
             modmailList.Items.Add("modmail");
             modmailTitleList.Items.Add("modmail_subject");
+
+            karmaageList.Items.Add("comment_karma");
+            karmaageList.Items.Add("post_karma");
+            karmaageList.Items.Add("combined_karma");
+            karmaageList.Items.Add("account_age");
+
+            typeBox.Items.Add("minutes");
+            typeBox.Items.Add("hours");
+            typeBox.Items.Add("days");
+            typeBox.Items.Add("weeks");
+            typeBox.Items.Add("months");
+            typeBox.Items.Add("years");
+
+            otherList.Items.Add("reports");
+            otherList.Items.Add("body_longer_than");
+            otherList.Items.Add("body_shorter_than");
+
             settings.Items.Add("Clear selection after adding.");
             settings.SetItemCheckState(0, CheckState.Checked);
 
@@ -156,9 +173,13 @@ namespace automod_generator
                 {
                     addData = addData + ":";
                 }
-                addData = addData + " " + boxFind.Text;
                 if (addData != "")
                 {
+                    addData = addData + " " + boxFind.Text;
+                }
+                if (addData != "")
+                {
+                    debugger.Text = addData;
                     vars.conditionData.Add(vars.prefix + addData);
                 }
                 foreach (string standard in standardList.CheckedItems)
@@ -189,10 +210,67 @@ namespace automod_generator
                     }
 
                 }
+                foreach (string data in karmaageList.CheckedItems)
+                {
+                    string typeofData = "";
+                    if (userisData == "")
+                    {
+                        vars.conditionData.Add("author:");
+                    }
+                    userisData = data;
+                    if (data == "comment_karma")
+                    {
+                        typeofData = commentKarmaBox.Text;
+                    }
+                    if (data == "post_karma")
+                    {
+                        typeofData = postKarmaBox.Text;
+                    }
+                    if (data == "combined_karma")
+                    {
+                        typeofData = combinedKarmaBox.Text;
+                    }
+                    if (data == "account_age")
+                    {
+                        if (typeBox.SelectedItem.ToString() == "")
+                        {
+                            typeofData = accountageBox.Text + " days";
+                        }
+                        else
+                        {
+                            typeofData = accountageBox.Text + " " + typeBox.SelectedItem;
+                        }
+
+                    }
+                    if (vars.prefix == "")
+                    {
+                        vars.conditionData.Add("    " + data + ": < " + typeofData);
+                    }
+                    else
+                    {
+                        vars.conditionData.Add("    " + data + ": > \'" + typeofData + "\'");
+                    }
+                }
+                foreach (string other in otherList.CheckedItems)
+                {
+                    string typeofData = "";
+                    if (other == "reports")
+                    {
+                        typeofData = reportsBox.Text;
+                    }
+                    if (other == "body_longer_than")
+                    {
+                        typeofData = longerBox.Text;
+                    }
+                    if (other == "body_shorter_than")
+                    {
+                        typeofData = shorterBox.Text;
+                    }
+                    vars.conditionData.Add(other + ": " + typeofData);
+                }
             }
             void addNegCondition()
             {
-                vars.prefix = "~";
                 addPosCondition();
             }
             void addAction()
@@ -245,10 +323,12 @@ namespace automod_generator
             }
             if (vars.type == "addPosCondition")
             {
+                vars.prefix = "";
                 addPosCondition();
             }
             if (vars.type == "addNegCondition")
             {
+                vars.prefix = "~";
                 addNegCondition();
             }
             if (vars.type == "addAction")
@@ -298,6 +378,10 @@ namespace automod_generator
             priorityList.UncheckAllItems();
             priorityList.ClearSelected();
             priorityList.UncheckAllItems();
+            otherList.ClearSelected();
+            otherList.UncheckAllItems();
+            karmaageList.ClearSelected();
+            karmaageList.UncheckAllItems();
         }
 
         private void ifButton_Click(object sender, EventArgs e)
@@ -337,13 +421,13 @@ namespace automod_generator
 
         public void debug(string data)
         {
-            if (richTextBox2.Text == "")
+            if (debugger.Text == "")
             {
-                richTextBox2.Text = data;
+                debugger.Text = data;
             }
             else
             {
-                richTextBox2.Text = richTextBox2.Text + "\n" + data;
+                debugger.Text = debugger.Text + "\n" + data;
             }
         }
 
@@ -382,7 +466,7 @@ namespace automod_generator
                 debug("enabled debug");
 
                 label6.Visible = true;
-                richTextBox2.Visible = true;
+                debugger.Visible = true;
                 resetButton.Visible = true;
             }
             else
@@ -391,7 +475,7 @@ namespace automod_generator
                 debug("disabled debug");
 
                 label6.Visible = false;
-                richTextBox2.Visible = false;
+                debugger.Visible = false;
                 resetButton.Visible = false;
             }
 
@@ -403,6 +487,8 @@ public static class AppExtensions
     public static void UncheckAllItems(this System.Windows.Forms.CheckedListBox clb)
     {
         while (clb.CheckedIndices.Count > 0)
+        {
             clb.SetItemChecked(clb.CheckedIndices[0], false);
+        }
     }
 }

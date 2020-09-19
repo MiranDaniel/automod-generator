@@ -49,8 +49,21 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.standardList = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.shorterBox = new System.Windows.Forms.RichTextBox();
+            this.longerBox = new System.Windows.Forms.RichTextBox();
+            this.reportsBox = new System.Windows.Forms.RichTextBox();
+            this.otherList = new System.Windows.Forms.CheckedListBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.userisList = new System.Windows.Forms.CheckedListBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.typeBox = new System.Windows.Forms.ComboBox();
+            this.accountageBox = new System.Windows.Forms.RichTextBox();
+            this.combinedKarmaBox = new System.Windows.Forms.RichTextBox();
+            this.postKarmaBox = new System.Windows.Forms.RichTextBox();
+            this.commentKarmaBox = new System.Windows.Forms.RichTextBox();
+            this.karmaageList = new System.Windows.Forms.CheckedListBox();
             this.ifNotButton = new System.Windows.Forms.Button();
             this.ifButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -64,7 +77,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.debugger = new System.Windows.Forms.RichTextBox();
             this.clroutButton = new System.Windows.Forms.Button();
             this.clrselButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -94,7 +107,9 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -179,6 +194,7 @@
             // output
             // 
             this.output.Dock = System.Windows.Forms.DockStyle.Top;
+            this.output.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.output.Location = new System.Drawing.Point(0, 0);
             this.output.Name = "output";
             this.output.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
@@ -280,9 +296,9 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.standardList);
-            this.groupBox7.Location = new System.Drawing.Point(3, 163);
+            this.groupBox7.Location = new System.Drawing.Point(364, 163);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(207, 154);
+            this.groupBox7.Size = new System.Drawing.Size(156, 154);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Standards";
@@ -295,13 +311,15 @@
             this.standardList.ImeMode = System.Windows.Forms.ImeMode.On;
             this.standardList.Location = new System.Drawing.Point(6, 19);
             this.standardList.Name = "standardList";
-            this.standardList.Size = new System.Drawing.Size(195, 124);
+            this.standardList.Size = new System.Drawing.Size(144, 124);
             this.standardList.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.groupBox12);
             this.panel1.Controls.Add(this.groupBox8);
+            this.panel1.Controls.Add(this.groupBox11);
             this.panel1.Controls.Add(this.ifNotButton);
             this.panel1.Controls.Add(this.ifButton);
             this.panel1.Controls.Add(this.groupBox7);
@@ -312,12 +330,66 @@
             this.panel1.Size = new System.Drawing.Size(529, 375);
             this.panel1.TabIndex = 6;
             // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.shorterBox);
+            this.groupBox12.Controls.Add(this.longerBox);
+            this.groupBox12.Controls.Add(this.reportsBox);
+            this.groupBox12.Controls.Add(this.otherList);
+            this.groupBox12.Location = new System.Drawing.Point(5, 251);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(221, 71);
+            this.groupBox12.TabIndex = 10;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Other";
+            // 
+            // shorterBox
+            // 
+            this.shorterBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.shorterBox.Location = new System.Drawing.Point(155, 45);
+            this.shorterBox.Name = "shorterBox";
+            this.shorterBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.shorterBox.Size = new System.Drawing.Size(56, 16);
+            this.shorterBox.TabIndex = 6;
+            this.shorterBox.Text = "";
+            // 
+            // longerBox
+            // 
+            this.longerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.longerBox.Location = new System.Drawing.Point(155, 30);
+            this.longerBox.Name = "longerBox";
+            this.longerBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.longerBox.Size = new System.Drawing.Size(56, 16);
+            this.longerBox.TabIndex = 5;
+            this.longerBox.Text = "";
+            // 
+            // reportsBox
+            // 
+            this.reportsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.reportsBox.Location = new System.Drawing.Point(155, 16);
+            this.reportsBox.Name = "reportsBox";
+            this.reportsBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.reportsBox.Size = new System.Drawing.Size(56, 16);
+            this.reportsBox.TabIndex = 4;
+            this.reportsBox.Text = "";
+            // 
+            // otherList
+            // 
+            this.otherList.CausesValidation = false;
+            this.otherList.CheckOnClick = true;
+            this.otherList.FormattingEnabled = true;
+            this.otherList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.otherList.Location = new System.Drawing.Point(5, 16);
+            this.otherList.Name = "otherList";
+            this.otherList.Size = new System.Drawing.Size(144, 49);
+            this.otherList.TabIndex = 2;
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.userisList);
-            this.groupBox8.Location = new System.Drawing.Point(211, 163);
+            this.groupBox8.Location = new System.Drawing.Point(232, 251);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(207, 154);
+            this.groupBox8.Size = new System.Drawing.Size(107, 92);
             this.groupBox8.TabIndex = 4;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "User Checks";
@@ -328,14 +400,100 @@
             this.userisList.CheckOnClick = true;
             this.userisList.FormattingEnabled = true;
             this.userisList.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.userisList.Location = new System.Drawing.Point(6, 19);
+            this.userisList.Location = new System.Drawing.Point(6, 17);
             this.userisList.Name = "userisList";
-            this.userisList.Size = new System.Drawing.Size(195, 124);
+            this.userisList.Size = new System.Drawing.Size(96, 64);
             this.userisList.TabIndex = 2;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.richTextBox2);
+            this.groupBox11.Controls.Add(this.typeBox);
+            this.groupBox11.Controls.Add(this.accountageBox);
+            this.groupBox11.Controls.Add(this.combinedKarmaBox);
+            this.groupBox11.Controls.Add(this.postKarmaBox);
+            this.groupBox11.Controls.Add(this.commentKarmaBox);
+            this.groupBox11.Controls.Add(this.karmaageList);
+            this.groupBox11.Location = new System.Drawing.Point(5, 163);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(359, 88);
+            this.groupBox11.TabIndex = 5;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "K/A Checks";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBox2.Location = new System.Drawing.Point(216, 20);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox2.Size = new System.Drawing.Size(137, 32);
+            this.richTextBox2.TabIndex = 9;
+            this.richTextBox2.Text = "IF = less than\nIF NOT = more than\n";
+            // 
+            // typeBox
+            // 
+            this.typeBox.FormattingEnabled = true;
+            this.typeBox.Location = new System.Drawing.Point(217, 59);
+            this.typeBox.Name = "typeBox";
+            this.typeBox.Size = new System.Drawing.Size(137, 21);
+            this.typeBox.TabIndex = 8;
+            // 
+            // accountageBox
+            // 
+            this.accountageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.accountageBox.Location = new System.Drawing.Point(155, 64);
+            this.accountageBox.Name = "accountageBox";
+            this.accountageBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.accountageBox.Size = new System.Drawing.Size(56, 16);
+            this.accountageBox.TabIndex = 7;
+            this.accountageBox.Text = "";
+            // 
+            // combinedKarmaBox
+            // 
+            this.combinedKarmaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.combinedKarmaBox.Location = new System.Drawing.Point(155, 45);
+            this.combinedKarmaBox.Name = "combinedKarmaBox";
+            this.combinedKarmaBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.combinedKarmaBox.Size = new System.Drawing.Size(56, 16);
+            this.combinedKarmaBox.TabIndex = 6;
+            this.combinedKarmaBox.Text = "";
+            // 
+            // postKarmaBox
+            // 
+            this.postKarmaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.postKarmaBox.Location = new System.Drawing.Point(155, 30);
+            this.postKarmaBox.Name = "postKarmaBox";
+            this.postKarmaBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.postKarmaBox.Size = new System.Drawing.Size(56, 16);
+            this.postKarmaBox.TabIndex = 5;
+            this.postKarmaBox.Text = "";
+            // 
+            // commentKarmaBox
+            // 
+            this.commentKarmaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.commentKarmaBox.Location = new System.Drawing.Point(155, 16);
+            this.commentKarmaBox.Name = "commentKarmaBox";
+            this.commentKarmaBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.commentKarmaBox.Size = new System.Drawing.Size(56, 16);
+            this.commentKarmaBox.TabIndex = 4;
+            this.commentKarmaBox.Text = "";
+            // 
+            // karmaageList
+            // 
+            this.karmaageList.CausesValidation = false;
+            this.karmaageList.CheckOnClick = true;
+            this.karmaageList.FormattingEnabled = true;
+            this.karmaageList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.karmaageList.Location = new System.Drawing.Point(5, 16);
+            this.karmaageList.Name = "karmaageList";
+            this.karmaageList.Size = new System.Drawing.Size(144, 64);
+            this.karmaageList.TabIndex = 2;
             // 
             // ifNotButton
             // 
-            this.ifNotButton.Location = new System.Drawing.Point(3, 343);
+            this.ifNotButton.Location = new System.Drawing.Point(3, 347);
             this.ifNotButton.Name = "ifNotButton";
             this.ifNotButton.Size = new System.Drawing.Size(75, 23);
             this.ifNotButton.TabIndex = 5;
@@ -345,7 +503,7 @@
             // 
             // ifButton
             // 
-            this.ifButton.Location = new System.Drawing.Point(3, 323);
+            this.ifButton.Location = new System.Drawing.Point(3, 328);
             this.ifButton.Name = "ifButton";
             this.ifButton.Size = new System.Drawing.Size(75, 23);
             this.ifButton.TabIndex = 4;
@@ -458,7 +616,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.richTextBox2);
+            this.panel3.Controls.Add(this.debugger);
             this.panel3.Controls.Add(this.clroutButton);
             this.panel3.Controls.Add(this.clrselButton);
             this.panel3.Controls.Add(this.resetButton);
@@ -481,17 +639,17 @@
             this.label6.Text = "DEBUGGING MODE ENABLED";
             this.label6.Visible = false;
             // 
-            // richTextBox2
+            // debugger
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.White;
-            this.richTextBox2.Location = new System.Drawing.Point(757, 0);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.richTextBox2.Size = new System.Drawing.Size(305, 275);
-            this.richTextBox2.TabIndex = 15;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.Visible = false;
+            this.debugger.BackColor = System.Drawing.Color.White;
+            this.debugger.Location = new System.Drawing.Point(757, 0);
+            this.debugger.Name = "debugger";
+            this.debugger.ReadOnly = true;
+            this.debugger.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.debugger.Size = new System.Drawing.Size(305, 275);
+            this.debugger.TabIndex = 15;
+            this.debugger.Text = "";
+            this.debugger.Visible = false;
             // 
             // clroutButton
             // 
@@ -745,7 +903,9 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -805,7 +965,7 @@
         private System.Windows.Forms.Button clroutButton;
         private System.Windows.Forms.Button clrselButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox debugger;
         private System.Windows.Forms.Button debugButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -817,5 +977,18 @@
         private System.Windows.Forms.RichTextBox modtitleBox;
         private System.Windows.Forms.CheckedListBox modmailList;
         private System.Windows.Forms.CheckedListBox regexmodifierList;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.CheckedListBox karmaageList;
+        private System.Windows.Forms.RichTextBox accountageBox;
+        private System.Windows.Forms.RichTextBox combinedKarmaBox;
+        private System.Windows.Forms.RichTextBox postKarmaBox;
+        private System.Windows.Forms.RichTextBox commentKarmaBox;
+        private System.Windows.Forms.ComboBox typeBox;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.RichTextBox shorterBox;
+        private System.Windows.Forms.RichTextBox longerBox;
+        private System.Windows.Forms.RichTextBox reportsBox;
+        private System.Windows.Forms.CheckedListBox otherList;
     }
 }
