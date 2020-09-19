@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
-using System.IO;
 
 namespace automod_generator
 {
@@ -66,7 +58,7 @@ namespace automod_generator
             listType.CheckOnClick = true;
             checkList.CheckOnClick = true;
 
-            
+
 
 
         }
@@ -85,9 +77,9 @@ namespace automod_generator
         {
 
             string types = "";
-            foreach(string te in listType.CheckedItems)
+            foreach (string te in listType.CheckedItems)
             {
-                if(types == "")
+                if (types == "")
                 {
                     types = te;
                 }
@@ -96,7 +88,7 @@ namespace automod_generator
                     types = types + "+" + te;
                 }
             }
-            if(types != "")
+            if (types != "")
             {
                 vars.typeData.Add("type: " + types);
             }
@@ -117,9 +109,9 @@ namespace automod_generator
                         addData = addData + "+" + item;
                     }
                 }
-                
-                if (checkRegex.Checked || checkCase.Checked) 
-                {   
+
+                if (checkRegex.Checked || checkCase.Checked)
+                {
                     addModifiers = "(";
                     if (checkRegex.Checked && checkCase.Checked)
                     {
@@ -139,35 +131,35 @@ namespace automod_generator
                     addModifiers = addModifiers + ")";
                 }
                 addData = addData + addModifiers;
-                
+
                 if (checkList.CheckedItems.Count > 0)
                 {
                     addData = addData + ":";
                 }
-                addData = addData +" " + boxFind.Text;
-                if(addData != "")
+                addData = addData + " " + boxFind.Text;
+                if (addData != "")
                 {
                     vars.conditionData.Add(vars.prefix + addData);
                 }
                 foreach (string standard in standardList.CheckedItems)
                 {
-                    if(standardData == "")
+                    if (standardData == "")
                     {
                         standardData = standard;
                     }
                 }
-                if(standardList.CheckedItems.Count > 0)
+                if (standardList.CheckedItems.Count > 0)
                 {
                     vars.conditionData.Add("standard: " + standardData);
                 }
-                foreach(string useris in userisList.CheckedItems)
+                foreach (string useris in userisList.CheckedItems)
                 {
-                    if(userisData == "")
+                    if (userisData == "")
                     {
                         vars.conditionData.Add("author:");
                     }
                     userisData = useris;
-                    if(vars.prefix == "")
+                    if (vars.prefix == "")
                     {
                         vars.conditionData.Add("    " + useris + ": false");
                     }
@@ -175,8 +167,8 @@ namespace automod_generator
                     {
                         vars.conditionData.Add("    " + useris + ": true");
                     }
-                    
-                }               
+
+                }
             }
             void addNegCondition()
             {
@@ -186,13 +178,13 @@ namespace automod_generator
             void addAction()
             {
                 string actionData = "";
-                foreach(string action in actionList.CheckedItems)
+                foreach (string action in actionList.CheckedItems)
                 {
                     actionData = "action: " + action;
                     vars.actionData.Add(actionData);
                     if (checkReason.Checked)
                     {
-                        if(action != "report")
+                        if (action != "report")
                         {
                             vars.actionData.Add("action_reason: " + boxReason.Text);
                         }
@@ -202,16 +194,16 @@ namespace automod_generator
                         }
                     }
                 }
-                foreach(string action in moreactionList.CheckedItems)
+                foreach (string action in moreactionList.CheckedItems)
                 {
-                    vars.actionData.Add(action+": true");
+                    vars.actionData.Add(action + ": true");
                 }
             }
             void addModifier()
             {
-                foreach(string modifier in addList.CheckedItems)
+                foreach (string modifier in addList.CheckedItems)
                 {
-                    if(modifier == "moderators_exempt")
+                    if (modifier == "moderators_exempt")
                     {
                         vars.modifierData.Add(modifier + ": false");
                     }
@@ -240,11 +232,11 @@ namespace automod_generator
             string m = string.Join("\n", vars.modifierData);
             output.Text = output.Text + "\n" + m;
             string a = string.Join("\n", vars.actionData);
-            output.Text = output.Text +"\n"+ a;
+            output.Text = output.Text + "\n" + a;
             resetMemory();
-            foreach(string item in settings.CheckedItems)
+            foreach (string item in settings.CheckedItems)
             {
-                if(item == "Clear selection after adding.")
+                if (item == "Clear selection after adding.")
                 {
                     clearSelection();
                 }
@@ -272,7 +264,7 @@ namespace automod_generator
         {
             vars.type = "addPosCondition";
             compile();
-            
+
         }
 
         private void ifNotButton_Click(object sender, EventArgs e)
@@ -305,7 +297,7 @@ namespace automod_generator
 
         public void debug(string data)
         {
-            if(richTextBox2.Text == "")
+            if (richTextBox2.Text == "")
             {
                 richTextBox2.Text = data;
             }
@@ -344,7 +336,7 @@ namespace automod_generator
 
         private void debugButton_Click(object sender, EventArgs e)
         {
-            if(vars.debug == false)
+            if (vars.debug == false)
             {
                 vars.debug = true;
                 debug("enabled debug");
@@ -362,7 +354,7 @@ namespace automod_generator
                 richTextBox2.Visible = false;
                 resetButton.Visible = false;
             }
-            
+
         }
     }
 }
