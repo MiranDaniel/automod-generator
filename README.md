@@ -8,7 +8,7 @@
 
 ---
 
-AutoModerator function coverage: `49.09%` (beta0.0.3)
+AutoModerator function coverage: **`49.09%` (beta0.0.3)** | `55.45%` (beta0.0.4)
 
 ---
 # Supported functions:
