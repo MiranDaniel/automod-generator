@@ -69,6 +69,7 @@ namespace automod_generator
             regexmodifierList.Items.Add("ends-with");
             regexmodifierList.Items.Add("full-exact");
             regexmodifierList.Items.Add("full-text");
+            regexmodifierList.Items.Add("case-sensitive");
 
             modmailList.Items.Add("modmail");
             modmailTitleList.Items.Add("modmail_subject");
@@ -79,6 +80,7 @@ namespace automod_generator
 
             listType.CheckOnClick = true;
             checkList.CheckOnClick = true;
+            this.ShowIcon = true;
 
 
 
@@ -290,6 +292,12 @@ namespace automod_generator
             standardList.UncheckAllItems();
             userisList.ClearSelected();
             userisList.UncheckAllItems();
+            addList.ClearSelected();
+            addList.UncheckAllItems();
+            priorityList.ClearSelected();
+            priorityList.UncheckAllItems();
+            priorityList.ClearSelected();
+            priorityList.UncheckAllItems();
         }
 
         private void ifButton_Click(object sender, EventArgs e)
