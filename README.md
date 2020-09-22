@@ -51,6 +51,7 @@ is_moderator
 (ends-with)
 (full-exact)
 (full-text)
+(case-sensitive)
 ```
 
 **Standards**
@@ -63,6 +64,14 @@ crowdfunding sites
 meme generator sites
 facebook links
 amazon affiliate links
+```
+
+**K/A Checks**
+```
+comment_karma
+post_karma
+combined_karma
+account_age
 ```
 
 ## Actions
@@ -99,4 +108,10 @@ modmail
 ```
 moderators_exempt
 priority
+```
+
+```
+reports
+body_longer_than
+body_shorter_than
 ```
