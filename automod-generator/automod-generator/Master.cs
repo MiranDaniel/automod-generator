@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace automod_generator
 {
-    public partial class Form1 : Form
+    public partial class Master : Form
     {
-        public Form1()
+        public Master()
         {
             InitializeComponent();
         }
@@ -99,6 +100,7 @@ namespace automod_generator
             checkList.CheckOnClick = true;
             this.ShowIcon = true;
 
+            
 
 
 
@@ -433,8 +435,9 @@ namespace automod_generator
 
         private void contactButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.reddit.com/message/compose?to=/r/mirandaniel");
+
         }
+
 
         private void feedbackButton_Click(object sender, EventArgs e)
         {
@@ -479,6 +482,19 @@ namespace automod_generator
                 resetButton.Visible = false;
             }
 
+        }
+
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void aboutButton_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();
+            about.Show();
         }
     }
 }

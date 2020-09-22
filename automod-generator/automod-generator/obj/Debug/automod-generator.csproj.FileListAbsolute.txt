@@ -1,9 +1,16 @@
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\automod-generator.exe.config
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\automod-generator.exe
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\automod-generator.pdb
-C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Form1.resources
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\en-AS\automod-generator.resources.dll
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\bin\Debug\en\automod-generator.resources.dll
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.AboutBox.resources
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Master.resources
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Properties.Resources.resources
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Master.en-AS.resources
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod_generator.Master.en.resources
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod-generator.csproj.GenerateResource.cache
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod-generator.csproj.CoreCompileInputs.cache
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\en-AS\automod-generator.resources.dll
+C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\en\automod-generator.resources.dll
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod-generator.exe
 C:\Users\miran\source\repos\automod-generator\automod-generator\automod-generator\obj\Debug\automod-generator.pdb
