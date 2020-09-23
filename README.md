@@ -1,18 +1,25 @@
-# Reddit AutoModerator config generator
+# Reddit AutoModerator config Generator (RAG)
 
-![commits](https://img.shields.io/github/commit-activity/m/MiranDaniel/automod-generator?style=flat-square)
-![issues](https://img.shields.io/github/issues-raw/MiranDaniel/automod-generator?style=flat-square)
-![pr](https://img.shields.io/github/issues-pr-raw/MiranDaniel/automod-generator?style=flat-square)
+Application created for generating config for Reddit AutoModerator. Supports almost all used functions (70+). Created to help people learn how to create AutoModerator config.
+
+---
+### Download new version: [b0.0.4](https://github.com/MiranDaniel/automod-generator/releases/latest)
+
+---
+
 
 # How to use:
 ## Windows
 1. Download `automoderator-generator-version.exe`
 2. Run `automoderator-generator-version.exe`
 ## Linux 
-*Linux is supported from version 1.0.0, older version may to behave correctly.*
+*Linux is supported from version 1.0.0, older version may to behave correctly*
 1. Download `automoderator-generator-version.exe` and `WineForLinux.sh`
 2. Run `WineForLinux.sh` (this will Install Wine-Mono)
 3. Run `mono automoderator-generator-version.exe`
+4. Enable "Linux Mode" in the app settings
+
+(This method uses Wine compatibility layer for Windows)
 ## MacOS
 There is no support for MacOS and we are not planning on adding it.
 
@@ -126,3 +133,8 @@ reports
 body_longer_than
 body_shorter_than
 ```
+
+---
+Special thanks to everyone that helped this project, by adding code, sharing this repo or just supporting us in the development. Thank you!
+
+![I love yall](https://img.shields.io/badge/Powered%20by-%3C3-red?style=flat-square&logo=flat-square)
