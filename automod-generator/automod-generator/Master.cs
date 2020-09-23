@@ -93,6 +93,7 @@ namespace automod_generator
 
             settings.Items.Add("Clear selection after adding.");
             settings.SetItemCheckState(0, CheckState.Checked);
+            settings.Items.Add("Linux mode");
 
             addList.Items.Add("moderators_exempt");
 
@@ -501,6 +502,23 @@ namespace automod_generator
             
             
             
+        }
+
+        private void settings_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(string item in settings.CheckedItems)
+            {
+                if(item == "Linux mode")
+                {
+                    this.MaximizeBox = true;
+                    this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+                }
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

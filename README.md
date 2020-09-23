@@ -4,9 +4,20 @@
 ![issues](https://img.shields.io/github/issues-raw/MiranDaniel/automod-generator?style=flat-square)
 ![pr](https://img.shields.io/github/issues-pr-raw/MiranDaniel/automod-generator?style=flat-square)
 
+# How to use:
+## Windows
+1. Download `automoderator-generator-version.exe`
+2. Run `automoderator-generator-version.exe`
+## Linux 
+*Linux is supported from version 1.0.0, older version may to behave correctly.*
+1. Download `automoderator-generator-version.exe` and `WineForLinux.sh`
+2. Run `WineForLinux.sh` (this will Install Wine-Mono)
+3. Run `mono automoderator-generator-version.exe`
+## MacOS
+There is no support for MacOS and we are not planning on adding it.
+
+---
 ## https://discord.gg/JhNeVSq (Discord support server)
-
-
 ---
 # Supported functions:
 
