@@ -872,7 +872,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Master";
-            this.Text = "Reddit Automoderator Generator beta0.0.4";
+            this.Text = "Reddit Automoderator Generator 1.0.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.boxType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

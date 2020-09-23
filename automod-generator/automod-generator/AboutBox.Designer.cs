@@ -153,7 +153,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 42);
             this.label1.TabIndex = 5;
-            this.label1.Text = "beta0.0.5\r\n\r\n(xx.xx.2020)\r\n\r\n\r\n";
+            this.label1.Text = "1.0.0\r\n\r\n(23.09.2020)\r\n\r\n\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // AboutBox
