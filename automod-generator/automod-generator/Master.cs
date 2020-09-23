@@ -110,6 +110,7 @@ namespace automod_generator
             public static bool debug = false;
             public static string type = "";
             public static string prefix = "";
+            public static bool aboutOpen = false;
             public static List<string> conditionData = new List<string>();
             public static List<string> actionData = new List<string>();
             public static List<string> modifierData = new List<string>();
@@ -493,8 +494,13 @@ namespace automod_generator
 
         private void aboutButton_Click(object sender, EventArgs e)
         {
+            
+
             var about = new AboutBox();
             about.Show();
+            
+            
+            
         }
     }
 }
