@@ -155,6 +155,7 @@
             this.checkList.Name = "checkList";
             this.checkList.Size = new System.Drawing.Size(195, 124);
             this.checkList.TabIndex = 2;
+            this.checkList.SelectedIndexChanged += new System.EventHandler(this.checkList_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -171,6 +172,7 @@
             // 
             this.regexmodifierList.CausesValidation = false;
             this.regexmodifierList.CheckOnClick = true;
+            this.regexmodifierList.Enabled = false;
             this.regexmodifierList.FormattingEnabled = true;
             this.regexmodifierList.ImeMode = System.Windows.Forms.ImeMode.On;
             this.regexmodifierList.Location = new System.Drawing.Point(5, 20);
@@ -431,6 +433,7 @@
             // 
             // typeBox
             // 
+            this.typeBox.Enabled = false;
             this.typeBox.FormattingEnabled = true;
             this.typeBox.Location = new System.Drawing.Point(217, 59);
             this.typeBox.Name = "typeBox";
@@ -439,6 +442,7 @@
             // 
             // accountageBox
             // 
+            this.accountageBox.Enabled = false;
             this.accountageBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.accountageBox.Location = new System.Drawing.Point(155, 64);
             this.accountageBox.Name = "accountageBox";
@@ -449,6 +453,7 @@
             // 
             // combinedKarmaBox
             // 
+            this.combinedKarmaBox.Enabled = false;
             this.combinedKarmaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.combinedKarmaBox.Location = new System.Drawing.Point(155, 45);
             this.combinedKarmaBox.Name = "combinedKarmaBox";
@@ -459,6 +464,7 @@
             // 
             // postKarmaBox
             // 
+            this.postKarmaBox.Enabled = false;
             this.postKarmaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.postKarmaBox.Location = new System.Drawing.Point(155, 30);
             this.postKarmaBox.Name = "postKarmaBox";
@@ -469,6 +475,7 @@
             // 
             // commentKarmaBox
             // 
+            this.commentKarmaBox.Enabled = false;
             this.commentKarmaBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.commentKarmaBox.Location = new System.Drawing.Point(155, 16);
             this.commentKarmaBox.Name = "commentKarmaBox";
@@ -487,6 +494,7 @@
             this.karmaageList.Name = "karmaageList";
             this.karmaageList.Size = new System.Drawing.Size(144, 64);
             this.karmaageList.TabIndex = 2;
+            this.karmaageList.SelectedIndexChanged += new System.EventHandler(this.karmaageList_SelectedIndexChanged);
             // 
             // ifNotButton
             // 
@@ -633,14 +641,13 @@
             // richTextBox3
             // 
             this.richTextBox3.BackColor = System.Drawing.Color.White;
-            this.richTextBox3.Location = new System.Drawing.Point(887, 0);
+            this.richTextBox3.Location = new System.Drawing.Point(736, 2);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
             this.richTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox3.Size = new System.Drawing.Size(155, 94);
+            this.richTextBox3.Size = new System.Drawing.Size(306, 140);
             this.richTextBox3.TabIndex = 17;
-            this.richTextBox3.Text = "How to use: \n\n1. Select Type\n2. Create conditions\n3. Create actions\n4. Add modifi" +
-    "ers (optional)\n";
+            this.richTextBox3.Text = resources.GetString("richTextBox3.Text");
             // 
             // label6
             // 
@@ -658,11 +665,11 @@
             // debugger
             // 
             this.debugger.BackColor = System.Drawing.Color.White;
-            this.debugger.Location = new System.Drawing.Point(757, 0);
+            this.debugger.Location = new System.Drawing.Point(736, 142);
             this.debugger.Name = "debugger";
             this.debugger.ReadOnly = true;
             this.debugger.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.debugger.Size = new System.Drawing.Size(305, 275);
+            this.debugger.Size = new System.Drawing.Size(305, 135);
             this.debugger.TabIndex = 15;
             this.debugger.Text = "";
             this.debugger.Visible = false;
@@ -689,7 +696,7 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(643, 23);
+            this.resetButton.Location = new System.Drawing.Point(639, 151);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(91, 23);
             this.resetButton.TabIndex = 12;
@@ -734,7 +741,6 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Type";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel5
             // 

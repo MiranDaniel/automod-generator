@@ -516,9 +516,48 @@ namespace automod_generator
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
+        private void checkList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool enable = false;
+            foreach(string item in checkList.CheckedItems)
+            {
+                enable = true;
+            }
+            regexmodifierList.Enabled = enable;
+            boxFind.Enabled = enable;
+        }
+
+        private void karmaageList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool comment_karmaE = false;
+            bool post_karmaE = false;
+            bool combined_karmaE = false;
+            bool account_ageE = false;
+            foreach (string item in karmaageList.CheckedItems)
+            {
+                if(item == "comment_karma")
+                {
+                    comment_karmaE = true;
+                }
+                if(item == "post_karma")
+                {
+                    post_karmaE = true;
+                }
+                if(item == "combined_karma")
+                {
+                    combined_karmaE = true;
+                }
+                if(item == "account_age")
+                {
+                    account_ageE = true;
+                }
+            }
+            commentKarmaBox.Enabled = comment_karmaE;
+            postKarmaBox.Enabled = post_karmaE;
+            combinedKarmaBox.Enabled = combined_karmaE;
+            accountageBox.Enabled = account_ageE;
+            typeBox.Enabled = account_ageE;
         }
     }
 }
