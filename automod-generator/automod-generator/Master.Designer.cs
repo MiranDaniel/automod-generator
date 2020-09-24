@@ -211,6 +211,7 @@
             this.actionList.Name = "actionList";
             this.actionList.Size = new System.Drawing.Size(120, 124);
             this.actionList.TabIndex = 3;
+            this.actionList.SelectedIndexChanged += new System.EventHandler(this.actionList_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -225,6 +226,7 @@
             // 
             // boxReason
             // 
+            this.boxReason.Enabled = false;
             this.boxReason.Location = new System.Drawing.Point(6, 42);
             this.boxReason.Name = "boxReason";
             this.boxReason.Size = new System.Drawing.Size(303, 101);
@@ -234,6 +236,7 @@
             // checkReason
             // 
             this.checkReason.AutoSize = true;
+            this.checkReason.Enabled = false;
             this.checkReason.Location = new System.Drawing.Point(6, 19);
             this.checkReason.Name = "checkReason";
             this.checkReason.Size = new System.Drawing.Size(128, 17);

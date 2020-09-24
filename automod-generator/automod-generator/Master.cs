@@ -638,6 +638,17 @@ namespace automod_generator
             output.Text = output.Text + "\n" + vars.outputA;
             resetMemory();
         }
+
+        private void actionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool enabled = false;
+            foreach(string item in actionList.CheckedItems)
+            {
+                enabled = true;
+            }
+            boxReason.Enabled = enabled;
+            checkReason.Enabled = enabled;
+        }
     }
 }
 public static class AppExtensions
