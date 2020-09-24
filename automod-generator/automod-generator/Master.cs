@@ -365,11 +365,8 @@ namespace automod_generator
             {
                 
                 output.Text = output.Text + vars.outputT;
-                
                 output.Text = output.Text + "\n" + vars.outputO;
-                
                 output.Text = output.Text + "\n" + vars.outputM;
-                
                 output.Text = output.Text + "\n" + vars.outputA;
                 resetMemory();
             }
@@ -636,12 +633,10 @@ namespace automod_generator
         private void compilerButton_Click(object sender, EventArgs e)
         {
             output.Text = output.Text + vars.outputT;
-
             output.Text = output.Text + "\n" + vars.outputO;
-
             output.Text = output.Text + "\n" + vars.outputM;
-
             output.Text = output.Text + "\n" + vars.outputA;
+            resetMemory();
         }
     }
 }
