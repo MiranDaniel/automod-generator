@@ -32,10 +32,9 @@
             this.boxType = new System.Windows.Forms.GroupBox();
             this.listType = new System.Windows.Forms.CheckedListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkList = new System.Windows.Forms.CheckedListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.regexmodifierList = new System.Windows.Forms.CheckedListBox();
             this.boxFind = new System.Windows.Forms.RichTextBox();
+            this.regexmodifierList = new System.Windows.Forms.CheckedListBox();
+            this.checkList = new System.Windows.Forms.CheckedListBox();
             this.output = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.actionList = new System.Windows.Forms.CheckedListBox();
@@ -76,6 +75,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.compilerButton = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.debugger = new System.Windows.Forms.RichTextBox();
@@ -97,7 +97,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.boxType.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -137,13 +136,38 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.boxFind);
+            this.groupBox2.Controls.Add(this.regexmodifierList);
             this.groupBox2.Controls.Add(this.checkList);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(207, 154);
+            this.groupBox2.Size = new System.Drawing.Size(517, 154);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Checks";
+            // 
+            // boxFind
+            // 
+            this.boxFind.Enabled = false;
+            this.boxFind.Location = new System.Drawing.Point(207, 86);
+            this.boxFind.Name = "boxFind";
+            this.boxFind.Size = new System.Drawing.Size(304, 57);
+            this.boxFind.TabIndex = 2;
+            this.boxFind.Text = "";
+            // 
+            // regexmodifierList
+            // 
+            this.regexmodifierList.CausesValidation = false;
+            this.regexmodifierList.CheckOnClick = true;
+            this.regexmodifierList.Enabled = false;
+            this.regexmodifierList.FormattingEnabled = true;
+            this.regexmodifierList.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.regexmodifierList.Location = new System.Drawing.Point(207, 18);
+            this.regexmodifierList.MultiColumn = true;
+            this.regexmodifierList.Name = "regexmodifierList";
+            this.regexmodifierList.Size = new System.Drawing.Size(303, 64);
+            this.regexmodifierList.TabIndex = 3;
             // 
             // checkList
             // 
@@ -156,38 +180,6 @@
             this.checkList.Size = new System.Drawing.Size(195, 124);
             this.checkList.TabIndex = 2;
             this.checkList.SelectedIndexChanged += new System.EventHandler(this.checkList_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.regexmodifierList);
-            this.groupBox1.Controls.Add(this.boxFind);
-            this.groupBox1.Location = new System.Drawing.Point(211, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 154);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search Checks Regex";
-            // 
-            // regexmodifierList
-            // 
-            this.regexmodifierList.CausesValidation = false;
-            this.regexmodifierList.CheckOnClick = true;
-            this.regexmodifierList.Enabled = false;
-            this.regexmodifierList.FormattingEnabled = true;
-            this.regexmodifierList.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.regexmodifierList.Location = new System.Drawing.Point(5, 20);
-            this.regexmodifierList.MultiColumn = true;
-            this.regexmodifierList.Name = "regexmodifierList";
-            this.regexmodifierList.Size = new System.Drawing.Size(303, 64);
-            this.regexmodifierList.TabIndex = 3;
-            // 
-            // boxFind
-            // 
-            this.boxFind.Location = new System.Drawing.Point(5, 86);
-            this.boxFind.Name = "boxFind";
-            this.boxFind.Size = new System.Drawing.Size(304, 57);
-            this.boxFind.TabIndex = 2;
-            this.boxFind.Text = "";
             // 
             // output
             // 
@@ -272,6 +264,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox6.Controls.Add(this.addList);
             this.groupBox6.Location = new System.Drawing.Point(3, 6);
             this.groupBox6.Name = "groupBox6";
@@ -287,13 +280,14 @@
             this.addList.ImeMode = System.Windows.Forms.ImeMode.On;
             this.addList.Location = new System.Drawing.Point(6, 19);
             this.addList.Name = "addList";
-            this.addList.Size = new System.Drawing.Size(120, 64);
+            this.addList.Size = new System.Drawing.Size(129, 64);
             this.addList.TabIndex = 1;
             // 
             // groupBox7
             // 
+            this.groupBox7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox7.Controls.Add(this.standardList);
-            this.groupBox7.Location = new System.Drawing.Point(364, 163);
+            this.groupBox7.Location = new System.Drawing.Point(365, 163);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(156, 164);
             this.groupBox7.TabIndex = 3;
@@ -322,7 +316,6 @@
             this.panel1.Controls.Add(this.ifButton);
             this.panel1.Controls.Add(this.groupBox7);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(298, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(531, 375);
@@ -331,6 +324,7 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox12.Controls.Add(this.shorterBox);
             this.groupBox12.Controls.Add(this.longerBox);
             this.groupBox12.Controls.Add(this.reportsBox);
@@ -344,6 +338,7 @@
             // 
             // shorterBox
             // 
+            this.shorterBox.Enabled = false;
             this.shorterBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.shorterBox.Location = new System.Drawing.Point(155, 45);
             this.shorterBox.Name = "shorterBox";
@@ -354,6 +349,7 @@
             // 
             // longerBox
             // 
+            this.longerBox.Enabled = false;
             this.longerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.longerBox.Location = new System.Drawing.Point(155, 30);
             this.longerBox.Name = "longerBox";
@@ -364,6 +360,7 @@
             // 
             // reportsBox
             // 
+            this.reportsBox.Enabled = false;
             this.reportsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.reportsBox.Location = new System.Drawing.Point(155, 16);
             this.reportsBox.Name = "reportsBox";
@@ -382,11 +379,13 @@
             this.otherList.Name = "otherList";
             this.otherList.Size = new System.Drawing.Size(144, 49);
             this.otherList.TabIndex = 2;
+            this.otherList.SelectedIndexChanged += new System.EventHandler(this.otherList_SelectedIndexChanged);
             // 
             // groupBox8
             // 
+            this.groupBox8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox8.Controls.Add(this.userisList);
-            this.groupBox8.Location = new System.Drawing.Point(232, 251);
+            this.groupBox8.Location = new System.Drawing.Point(229, 254);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(132, 92);
             this.groupBox8.TabIndex = 4;
@@ -406,6 +405,7 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox11.Controls.Add(this.richTextBox2);
             this.groupBox11.Controls.Add(this.typeBox);
             this.groupBox11.Controls.Add(this.accountageBox);
@@ -626,6 +626,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.compilerButton);
             this.panel3.Controls.Add(this.richTextBox3);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.debugger);
@@ -637,6 +638,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1066, 304);
             this.panel3.TabIndex = 10;
+            // 
+            // compilerButton
+            // 
+            this.compilerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.compilerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.compilerButton.Location = new System.Drawing.Point(1, 254);
+            this.compilerButton.Name = "compilerButton";
+            this.compilerButton.Size = new System.Drawing.Size(528, 23);
+            this.compilerButton.TabIndex = 18;
+            this.compilerButton.Text = "COMPILE CODE";
+            this.compilerButton.UseVisualStyleBackColor = false;
+            this.compilerButton.Visible = false;
+            this.compilerButton.Click += new System.EventHandler(this.compilerButton_Click);
             // 
             // richTextBox3
             // 
@@ -655,7 +669,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(3, 240);
+            this.label6.Location = new System.Drawing.Point(1, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(430, 33);
             this.label6.TabIndex = 16;
@@ -756,9 +770,10 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox9.Controls.Add(this.priorityValueBox);
             this.groupBox9.Controls.Add(this.priorityList);
-            this.groupBox9.Location = new System.Drawing.Point(144, 6);
+            this.groupBox9.Location = new System.Drawing.Point(3, 103);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(139, 90);
             this.groupBox9.TabIndex = 3;
@@ -767,6 +782,7 @@
             // 
             // priorityValueBox
             // 
+            this.priorityValueBox.Enabled = false;
             this.priorityValueBox.Location = new System.Drawing.Point(6, 44);
             this.priorityValueBox.Name = "priorityValueBox";
             this.priorityValueBox.Size = new System.Drawing.Size(120, 40);
@@ -782,6 +798,7 @@
             this.priorityList.Name = "priorityList";
             this.priorityList.Size = new System.Drawing.Size(120, 19);
             this.priorityList.TabIndex = 1;
+            this.priorityList.SelectedIndexChanged += new System.EventHandler(this.priorityList_SelectedIndexChanged);
             // 
             // modifierButton
             // 
@@ -882,7 +899,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.boxType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -911,7 +927,6 @@
         private System.Windows.Forms.CheckedListBox listType;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckedListBox checkList;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox output;
         private System.Windows.Forms.RichTextBox boxFind;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -973,5 +988,6 @@
         private System.Windows.Forms.CheckedListBox otherList;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Button aboutButton;
+        private System.Windows.Forms.Button compilerButton;
     }
 }

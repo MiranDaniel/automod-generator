@@ -92,6 +92,8 @@ namespace automod_generator
             otherList.Items.Add("body_shorter_than");
 
             settings.Items.Add("Clear selection after adding.");
+            settings.Items.Add("Auto-Compile");
+            settings.SetItemCheckState(1, CheckState.Checked);
             settings.SetItemCheckState(0, CheckState.Checked);
             settings.Items.Add("Linux mode");
 
@@ -116,6 +118,10 @@ namespace automod_generator
             public static List<string> actionData = new List<string>();
             public static List<string> modifierData = new List<string>();
             public static List<string> typeData = new List<string>();
+            public static string outputT = "";
+            public static string outputO = "";
+            public static string outputM = "";
+            public static string outputA = "";
         }
 
         public void compile()
@@ -343,15 +349,32 @@ namespace automod_generator
             {
                 addModifier();
             }
-            string t = string.Join("\n", vars.typeData);
-            output.Text = output.Text + t;
-            string o = string.Join("\n", vars.conditionData);
-            output.Text = output.Text + "\n" + o;
-            string m = string.Join("\n", vars.modifierData);
-            output.Text = output.Text + "\n" + m;
-            string a = string.Join("\n", vars.actionData);
-            output.Text = output.Text + "\n" + a;
-            resetMemory();
+            bool ac = false;
+            foreach(string item in settings.CheckedItems)
+            {
+                if(item == "Auto-Compile")
+                {
+                    ac = true;
+                }
+            }
+            vars.outputT = string.Join("\n", vars.typeData);
+            vars.outputO = string.Join("\n", vars.conditionData);
+            vars.outputM = string.Join("\n", vars.modifierData);
+            vars.outputA = string.Join("\n", vars.actionData);
+            if (ac == true)
+            {
+                
+                output.Text = output.Text + vars.outputT;
+                
+                output.Text = output.Text + "\n" + vars.outputO;
+                
+                output.Text = output.Text + "\n" + vars.outputM;
+                
+                output.Text = output.Text + "\n" + vars.outputA;
+                resetMemory();
+            }
+            
+
             foreach (string item in settings.CheckedItems)
             {
                 if (item == "Clear selection after adding.")
@@ -506,14 +529,26 @@ namespace automod_generator
 
         private void settings_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bool liA = false;
+            bool acA = true;
             foreach(string item in settings.CheckedItems)
             {
                 if(item == "Linux mode")
                 {
-                    this.MaximizeBox = true;
-                    this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+                    liA = true;
+                }
+                if(item == "Auto-Compile")
+                {
+                    acA = false;
                 }
             }
+            this.MaximizeBox = liA;
+            if(liA == true)
+            {
+                this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            }
+            
+            compilerButton.Visible = acA;
         }
 
 
@@ -558,6 +593,55 @@ namespace automod_generator
             combinedKarmaBox.Enabled = combined_karmaE;
             accountageBox.Enabled = account_ageE;
             typeBox.Enabled = account_ageE;
+        }
+
+        private void otherList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool reportsE = false;
+            bool bodylE = false;
+            bool bodysE = false;
+            foreach(string item in otherList.CheckedItems)
+            {
+                if(item == "reports")
+                {
+                    reportsE = true;
+                }
+                if(item == "body_longer_than")
+                {
+                    bodylE = true;
+                }
+                if(item == "body_shorter_than")
+                {
+                    bodysE = true;
+                }
+                reportsBox.Enabled = reportsE;
+                longerBox.Enabled = bodylE;
+                shorterBox.Enabled = bodysE;
+            }
+        }
+
+        private void priorityList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool pE = false;
+            foreach(string item in priorityList.CheckedItems)
+            {
+                if(item == "priority")
+                {
+                    pE = true;
+                }
+            }
+            priorityValueBox.Enabled = pE;
+        }
+
+        private void compilerButton_Click(object sender, EventArgs e)
+        {
+            output.Text = output.Text + vars.outputT;
+
+            output.Text = output.Text + "\n" + vars.outputO;
+
+            output.Text = output.Text + "\n" + vars.outputM;
+
+            output.Text = output.Text + "\n" + vars.outputA;
         }
     }
 }
