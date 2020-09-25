@@ -2,9 +2,11 @@
 
 Application created for generating config for Reddit AutoModerator. Supports almost all used functions (70+). Created to help people learn how to create AutoModerator config.
 
+![w](https://badgen.net/github/release/mirandaniel/automod-generator)
+![w](https://badgen.net/github/last-commit/mirandaniel/automod-generator)
+![https://discord.gg/4gCzqw7](https://badgen.net/badge/icon/discord?icon=discord&label)
 ---
 ### Download new version: [b0.0.4](https://github.com/MiranDaniel/automod-generator/releases/latest)
-
 ---
 
 
