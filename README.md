@@ -137,6 +137,6 @@ body_shorter_than
 ```
 
 ---
-Special thanks to everyone that helped this project, by adding code, sharing this repo or just supporting us in the development. Thank you!
+Special thanks to everyone that helped this project, by adding code, sharing this repo, or just supporting us in the development. Thank you!
 
 ![I love yall](https://img.shields.io/badge/Powered%20by-%3C3-red?style=flat-square&logo=flat-square)
