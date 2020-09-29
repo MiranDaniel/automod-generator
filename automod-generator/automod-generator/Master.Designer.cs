@@ -882,7 +882,7 @@
             // Master
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1370, 721);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel6);
