@@ -9,7 +9,6 @@ Application created for generating config for Reddit AutoModerator. Supports alm
 ### Download new version: [b0.0.4](https://github.com/MiranDaniel/automod-generator/releases/latest)
 ---
 
-
 # How to use:
 ## Windows
 1. Download `automoderator-generator-version.exe`
